@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function greet() {
+        return console.log("good morning Pakistan");
+      }
+      function greet1(name) {
+        return console.log("good morning " + name);
+      }
+      function greet2(name) {
+        console.log("good evening " + name);
+      }
+      function greet3() {
+        console.log("Bye Bye Buddies");
+      }
+      //practice of all core concepts
+      console.log("practice of all core concepts\n");
+      let names = {
+        name: "asma",
+        cast: " khan",
+        language: "urdu",
+        fatherName: "A.Saeed Khan",
+      };
+      let names1 = ["asma", "rania", "hania", "firdous", "tabassum", "muskan"];
+
+      //access elements of objects
+      for (key in names) {
+        console.log(key, names[key]);
+      }
+      //access elements of arrays
+      for (key in names1) {
+        console.log(key, names1[key]);
+      }
+
+      //for of loop
+      for (key of names1) {
+        console.log("hello buddy " + key);
+      }
+
+      //practice of functions
+      console.log("\n \n");
+      console.log("practice of functions");
+      // let name = 'asma';
+      //1: take nothing return something
+      let greetings = greet();
+      console.log(greetings);
+      //2: take something return something
+      let greetings2 = greet1("hania");
+      console.log(greetings2);
+      //3: take something return nothing
+      console.log(greet2("asfa"));
+      //3: take nothing return nothing
+      console.log(greet3());
+      // -----------Strings Fucntions-----------
+      let string1 = "123";
+      //convert string to number
+      console.log(Number(string1));
+      let number = Number(string1);
+      console.log(number);
+      //convert number to string
+      console.log(number.toString());
+      let favShow = "game of thrones";
+      console.log("length of variable is", favShow.length);
+      // you can retrieve elements of strigs like this
+      console.log(favShow[14]);
+      console.log("indexOf of is", favShow.indexOf("of"));
+      console.log("substring via slice is ", favShow.slice(8, 15));
+      //program in js for strings
+      let cities = ["mumBai", "DELhi", "jaIPuR", "gOa"];
+      console.log("length of string is: ", cities.length);
+      console.log("length of individual string is", cities[0].length);
+      for(let i=0 ; i<cities.length ; i++){
+        let lowerCaseCity = cities[i].toLowerCase();
+        let temp = lowerCaseCity.slice(0,1);
+        lowerCaseCity = lowerCaseCity.replace(temp,temp.toUpperCase());
+        cities[i] = lowerCaseCity;
+        console.log('string is completly change in to other case', cities[i]);
+      }
+
+      ////////////////////////////////////////////////       ///////////another program/////////
+      let greetings3 = ['Happy Birthday!',
+      'Happy Holi to all of you guys',
+      'A happy Holi to all the family',
+      'Holi Mubarak ho',
+      'Get well soon',
+      'Happy Anniversary Mom and Dad!'];
+      let result;
+      console.log('answer is', result);
+      let newStr=[];
+      let j=0;
+       for(let i=0 ; i< greetings3.length ; i++){
+         result = greetings3[i].includes("Holi");
+            if(result){
+              newStr[j]=greetings3[i];
+              console.log('no is ', newStr[j]);
+              j++;
+            }
+       }
+    </script>
+  </body>
+</html>

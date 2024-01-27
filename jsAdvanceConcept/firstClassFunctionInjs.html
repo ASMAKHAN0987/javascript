@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>firstClassFunction</title>
+</head>
+<body>
+    <script>
+        // function statement or function declaration
+        function abc(xyz){
+           xyz();
+        }
+        // arrow function or inline function
+        // function expression as well
+        let xyz= ()=>console.log("hello");
+        // xyz();
+        // function expression
+        let expression = function (){
+            console.log("called");
+        }
+        // or
+        function func2 (){
+            return ()=>console.log("hello buddies");
+            // it is function expression.
+        }
+        // the major differnce in function expression and function declaration is hoisting.
+        // if you call function that is in variable like expression() before it's declaration so it will give us an error.
+        // first class function or first class citizen
+        // ability to use function like values
+        abc(xyz); 
+    </script>
+</body>
+</html>

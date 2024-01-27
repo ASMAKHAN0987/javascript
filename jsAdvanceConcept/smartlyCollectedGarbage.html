@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // so modern browser like v8 so it collectes unreachable memory smartly like here z is not need any more so browser will free up its memory but not x memory cuz we are using it function and that function is making closure with function a.
+        function a(){
+            var x=0,z=20;
+            return function(){
+                console.log(x);
+            }
+        }
+        a()();
+    </script>
+</body>
+</html>

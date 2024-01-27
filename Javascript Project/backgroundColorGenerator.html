@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>background color generator</title>
+    <!-- css for this -->
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      #container_heading {
+        border: 1px solid red;
+        padding: 60px 30px;
+        margin-bottom: 100px;
+        background-color: plum;
+        text-align: center;
+        font-size: 50px;
+        border: 3px solid purple;
+      }
+      .container {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 50px;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 100px;
+      }
+      .container div {
+        width: 250px;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 30px;
+        background-color: b142e16;
+        background-color: #0000ff;
+        cursor: pointer;
+      }
+    </style>
+    <!-- css ended -->
+  </head>
+  <body>
+    <!-- html start -->
+    <h1 id="container_heading">Random Color Generator</h1>
+    <div class="container">
+      <div class="divs" onclick="clickEvent(this)"></div>
+      <div
+        class="divs"
+        onclick="clickEvent(this)
+      "
+      ></div>
+      <div
+        class="divs"
+        onclick="clickEvent(this)
+      "
+      ></div>
+      <div
+        class="divs"
+        onclick="clickEvent(this)
+      "
+      ></div>
+      <div
+        class="divs"
+        onclick="clickEvent(this)
+      "
+      ></div>
+      <div
+        class="divs"
+        onclick="clickEvent(this)
+      "
+      ></div>
+      <div
+        class="divs"
+        onclick="clickEvent(this)
+      "
+      ></div>
+      <div
+        class="divs"
+        onclick="clickEvent(this)
+      "
+      ></div>
+      <div
+        class="divs"
+        onclick="clickEvent(this)
+      "
+      ></div>
+      <div
+        class="divs"
+        onclick="clickEvent(this)
+      "
+      ></div>
+      <div
+        class="divs"
+        onclick="clickEvent(this)
+      "
+      ></div>
+      <div
+        class="divs"
+        onclick="clickEvent(this)
+      "
+      ></div>
+    </div>
+    <!-- html ended -->
+    <!-- js start for this -->
+    <script>
+      let cont = document.querySelector(".container");
+      let children = cont.children;
+      let divs = document.querySelectorAll(".divs");
+      for (let i = 0; i < children.length; i++) {
+        const random =
+          Math.floor(Math.random() * (0xffffff - 0x000000)) + 000000;
+        console.log(random.toString(16));
+        let bg = random.toString(16);
+        children[i].style.background = "#" + bg;
+        children[i].innerHTML = "#" + bg;
+      }
+      function clickEvent(object) {
+        navigator.clipboard.writeText(object.innerHTML);
+        let copied = object.innerHTML;
+        alert("copied " + copied);
+        console.log("key is pressed!");
+      }
+    </script>
+    <!-- js ended -->
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>restOperator</title>
+  </head>
+  <body>
+    <script>
+      //rest operator
+      const sum = (function () {
+        return function sum(...obj) {
+          return obj.reduce((acc, curr) => acc + curr, 0);
+        };
+      })();
+      console.log(sum(1, 3, 5, 5, 87));
+      //spread operator
+      const arr = [1, 2, 3, 4, 5, 6];
+      let arr2;
+      let output = (function () {
+        arr2 = [...arr];
+        arr[0] = "potato";
+      })();
+      console.log(
+        "arr2 is clonned by arr and we have changed arr but arr2 didn't change: ",
+        arr2
+      );
+      console.log("now arr is: ", arr);
+      //concatenate with two arrays using spread operator:
+      let a = ["asma", "kashif", "sania"];
+      let b = ["warda", "tahira", "moosa"];
+      let output2 = [...a, ...b];
+      console.log("now after concatenating values of ouput2 is: ", output2);
+      //another very amazing example
+      const obj1 = { foo: "bar", x: 42 };
+      const obj2 = { foo: "baz", y: 13 };
+      const merge = (...objects) => ({ ...objects });
+
+      const mergedObj1 = merge(obj1, obj2);
+      // { 0: { foo: 'bar', x: 42 }, 1: { foo: 'baz', y: 13 } }
+      console.log("merge object1 output is: ",mergedObj1);
+      const mergedObj2 = merge({}, obj1, obj2);
+      console.log("merge object1 output is: ",mergedObj2);
+      // { 0: {}, 1: { foo: 'bar', x: 42 }, 2: { foo: 'baz', y: 13 } }
+    </script>
+  </body>
+</html>

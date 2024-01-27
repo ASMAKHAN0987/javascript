@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <li>First</li>
+    <li>Second</li>
+    <li id="third">Third</li>
+    <li>Fourth</li>
+
+    <ul>
+        <li>first</li>
+        <li>second</li>
+        <li id="intro">third</li>
+        <li>fourth</li>
+        <li>fifth</li>
+
+    </ul>
+    <div id="intro1">
+        <p>hello hania amir you are so cute </p>
+    </div>
+    <div id="intro2">
+        <p>your life is yourself! </p>
+    </div>
+    <script>
+      let li = document.getElementById("third");
+      li.innerHTML = 'word';
+      let intro = document.getElementById("intro");
+      let node = intro.previousElementSibling.previousElementSibling;
+      console.log(node);
+      let intro1 = document.getElementById("intro1");
+      let h1 = document.createElement('h1');
+    //   console.log(intro);
+      intro1.appendChild(h1);
+    //   h1.innerHTML = "bye bye 2k22";
+     h1.textContent = "you are super duper amazing";
+     let intro2 = document.getElementById("intro2");
+     let text = "<h2> Nothing is impossible in your life</h2>";
+     intro2.insertAdjacentHTML('afterend',text); 
+     intro2.style.cssText = "background-color:pink;color:red;padding:20px;";
+    </script>
+</body>
+</html>

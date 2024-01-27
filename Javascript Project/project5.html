@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="project5.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+     />
+    <title>project5</title>
+  </head>
+  <body id="body">
+    <div id="popUp" class="hide">
+      <div id="cross" onclick="hidePopUp()">
+        <a href="#">
+          <i class="fa-solid fa-xmark"></i>
+        </a>
+      </div> 
+        <input type="email" name="" id="email" placeholder="enter your email">
+        <button id="btn">
+          Join
+        </button>
+    </div>
+    <div class="top">
+    <header>
+      <h2><a href="#">Renonex</a></h2>
+      <nav>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Service</a></li>
+        <li><a href="#">Contact</a></li> 
+      </nav>
+    </header>
+    <section class="banner-area">
+      <div class="banner-img"></div>
+      <h1>Creative Agency</h1>
+      <h3>Welcome to Website</h3>
+      <a href="#" class="banner-btn" onclick="showPopUp()"> Contact Us </a>
+    </section>
+  </div>
+    <section class="about-area" id="about">
+      <h1 class="section-title">About</h1>
+      <ul class="about-content">
+        <li class="about-left"></li>
+        <li class="about-right">
+          <h2>Company Preview</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente
+            consequuntur expedita corrupti voluptas quis totam assumenda
+            molestiae velit sint distinctio qui quasi, vitae asperiores enim?
+            Qui molestiae nesciunt sint vitae.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, asperiores.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci beatae voluptatum porro obcaecati perspiciatis ab laudantium magnam similique aliquid in.
+          </p>
+        </li>
+      </ul>
+    </section>
+    <section class="Services-area" id="services">
+      <h3 class="section-title">Services</h3>
+      <ul class="services-content">
+        <li>
+          <i class="fa fa-bookmark"></i>
+          <h4>Design</h4>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga,
+            molestias!
+          </p>
+        </li>
+
+        <li>
+          <i class="fa fa-book"></i>
+          <h4>Branding</h4>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga,
+            molestias!
+          </p>
+        </li>
+
+        <li>
+          <i class="fa fa-star"></i>
+          <h4>Seo</h4>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga,
+            molestias!
+          </p>
+        </li>
+      </ul>
+    </section>
+    <section class="contact-area" id="contact">
+      <h1 class="section-title">Contact</h1>
+      <ul class="contact-content">
+        <li>
+          <i class="fa fa-map-marker"> </i>
+          <p>132, xyz <br />California, USA</p>
+        </li>
+        <li>
+          <i class="fa fa-phone"> </i>
+          <p>+03043366349<br />California, USA</p>
+        </li>
+        <li>
+          <i class="fa fa-envelope"> </i>
+          <p>xyz@gmail.com <br />abc@yahoo.com</p>
+        </li>
+      </ul>
+    </section>
+    <footer>
+      <p>All Right Reserved</p>
+    </footer>
+    <script>
+      let body = document.getElementById("body");
+       let popUp = document.getElementById("popUp");
+       let topper = document.querySelector(".top");
+       console.log(topper);
+       function showPopUp(){
+          topper.classList.add("active");
+           popUp.classList.remove("hide");
+       }
+       function hidePopUp(){
+        topper.classList.remove("active");
+        popUp.classList.add("hide");
+       }
+    </script>
+  </body>
+</html>

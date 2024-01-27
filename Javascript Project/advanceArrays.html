@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+    <ul class="list">
+        <li>Home</li>
+        <li>About</li>
+        <li>Section</li>
+        <li>Feedback</li>
+        <li>Contacts</li>
+    </ul>
+    <script>
+       /* Arrays.from()
+           1. Allows you to create an array from an iterable or array like object.
+           2. provides a map function for convenience*/
+           function myfun(){
+            const argsArr = Array.from(arguments);
+            console.log("array via array from: ", argsArr);
+           }
+           myfun(1,'dom',{ name: 'asma'});
+        let Items = document.querySelectorAll("li");
+        let arr = Array.from(Items);
+        console.log("array is: ",arr);
+        let name = "Shahrukh Khan";
+        console.log("name now became array of characters: ", Array.from(name));
+        const str = Array.from(name, (char)=>{
+              return char.toUpperCase();
+        })
+        console.log("now array is transformed into capital letters: ", str);
+        const myset = new Set();
+        myset.add(1);
+        myset.add(3);
+        myset.add(4, 5, 6);
+        for(const value of myset.values()){
+            console.log("now myset is : ", value);
+        }
+        console.log("now myset is : ", myset);
+        const mysetArr = Array.from(myset);
+        // const setArr = new Set();
+        mysetArr[0] = "asma";
+        console.log("arrays are: ", mysetArr);
+        myset.add({name: "dom"});
+        //Array Map() Function
+        var a = [1,3,5,8,9];
+        // a.map(function(){   ------syntax-----
+        //     statement;
+        // });
+        const multiple = a.map((char)=>{
+          return char =  char*10;
+        });
+        // Here, the toString() method will convert “number” to binary format, as base “2” is passed as an argument.
+        console.log("array is: ", multiple);
+        const arrays = [5,4,13,2,1];
+        // const output = arrays.map((x)=>{
+        //     return x.toString(2);
+        // });  OR
+        const output = arrays.map((x)=> x.toString(2));
+        console.log("arrays are", output);
+        //Array function filer() is used to filter elements like odd num even num greaterThanNum and etc.
+        function isEven(num){
+            return num%2===0;
+        }
+        const output2 = arrays.filter(isEven);
+        console.log("Numbers are even: ",output2);
+       const  output3 = arrays.filter((num)=>{
+            return num%2===0; 
+        });
+        console.log("even numbers are", output2);
+        //we will learn array reduce function.
+        //traditional approach
+        arrSum= [4, 13, 6, 15 ,8, 18, 1];
+        function sum(){ 
+           let sum = 0;
+           for(let i=0; i< arrSum.length ; i++){
+            sum = sum+arrSum[i];
+           }
+           return sum;
+        }
+        summ = sum();
+        console.log("sum of array is: ", summ);
+        const output4 = arrSum.reduce(function (acc,curr){
+            acc = acc + curr;
+            console.log("sum of array step by step: ", acc);
+            return acc;
+        },0);
+        console.log("array of sum via array reduce function is", output4);
+        const maximum = arrSum.reduce(function(acc,curr){
+            if(curr > acc){
+                acc = curr;
+            }
+            console.log("acc value is", acc);
+            console.log("currenrt value is: ", curr);
+            return acc;
+        });
+         console.log("maximum value is: ", maximum);
+         const users = [
+            {firstName: "Asma", lastName: "khan", age: 24},
+            {firstName: "Roobab", lastName: "Ahmed", age: 25},
+            {firstName: "sania", lastName: "Jameel", age: 30},
+            {firstName: "Kauser", lastName: "Amir", age: 15},
+            {firstName: "Munaza", lastName: "Amir", age: 24},
+            {firstName: "Fareeda", lastName: "Amir", age: 30},
+            {firstName: "Hania", lastName: "Amir", age: 15},
+         ];
+        //  const output5 = users.map((member)=>{
+        //     member = member.firstName + ' ' + member.lastName;
+        //     return member;
+        //  }
+        //  );
+
+        //  short way to write this same code is:
+         const output5 = users.map((member) => member.firstName + " " + member.lastName);
+         const ageObj = new Object();
+         let tot1=0,tot2=0,tot3 = 0;
+         console.log("member with full name are: ", output5);
+        let  output7 = users.reduce((acc,curr)=>{
+            console.log("currnet afe ", curr);
+            console.log("acc is: ", acc);
+                   if(curr.age == 15){
+                        tot1 += 1;
+                        // ageObj["15"] = tot1; 
+                           acc["15"] = tot1; 
+                        console.log("I am tot 1", tot1);
+                   }
+                   else if(curr.age == 24){
+                    tot2 += 1;
+                    // ageObj["24"] = tot2;
+                       acc["24"] = tot2;
+                    console.log("I am tot 2", tot2);
+                   }
+                   else if(curr.age == 30){
+                    acc["30"] = tot2
+                   }
+                   else if(curr.age == 25){
+                    tot3 += 1;
+                    // ageObj["25"] = tot3;
+                       acc["25"] = tot3;
+                    console.log("I am tot 3", tot3);
+                   }
+                     return acc;
+        },{});
+        console.log("answer is: " ,output7);
+        // this is the best example of chota paket bara dhamaka
+        output7 =  users.reduce(function (acc,curr) {
+            if(acc[curr.age]){
+                acc[curr.age] = ++acc[curr.age];
+            }
+            else{
+                acc[curr.age] = 1;
+            }
+            return acc;
+        },{});
+        console.log("output 7 now shock us: ", output7);
+        //it is called the chanining the filter and map function.
+        const output8 = users.filter((num)=> num.age < 30).map((x)=>x.firstName);
+        console.log("There are the peoples their age is greater than 30: ", output8);
+
+        const output9 = users.reduce((acc,curr)=>{
+          if(curr.age< 30){
+            acc.push(curr.firstName);
+          } 
+          return acc;
+        },[]);
+        console.log("now output9 for this program is : ", output9);
+    </script>
+</body>
+</html>

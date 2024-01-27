@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      body h1{
+        margin-top: 20px;
+        text-align: center;
+        font-size: 50px;
+      }
+      .container {
+        margin-top: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      #btn {
+        margin: 30px 0 20px 0;
+        padding: 20px 35px;
+        background-color: black;
+        border: none;
+        color:white;
+        font-size: 20px;
+      }
+      #btn:hover{
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body id="body">
+    <h1>Random Image Generator</h1>
+    <div class="container">
+      <div>
+        <img src="https://picsum.photos/280/300?random=21" alt="" />
+      </div>
+      <div>
+        <img src="https://picsum.photos/280/300?random=22" alt="" />
+      </div>
+      <div>
+        <img src="https://picsum.photos/280/300?random=23" alt="" />
+      </div>
+    </div>
+    <button id="btn" onclick="clicky()">Load More</button>
+    <script>
+      let container = document.querySelector(".container");
+      function random() {
+        // console.log("I am in random func: ", i);
+        return `https://picsum.photos/280/300?random=${Math.floor(Math.random()*2000)}`;
+      }
+      function randomGenerator() {
+        let image = document.createElement("img");
+        let div = document.createElement("div");
+        image.setAttribute("src", random());
+        console.log(image);
+        div.appendChild(image);
+        console.log(div);
+        container.append(div);
+      }
+      for (let i = 0; i <= 20; i++) {
+        randomGenerator();
+      }
+      function clicky(){
+        for (let i = 0; i <= 6; i++) {
+        randomGenerator();
+      }
+      }
+    </script>
+  </body>
+</html>

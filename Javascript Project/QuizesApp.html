@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="QuizesApp.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form class="form" id="fom" onsubmit=" return validAnswer()"> 
+      <h1 id="heading">Quiz App</h1>
+      <div id="box">
+        <p id="scoreHeading">Score:<span id="score">0</span></p>
+        <p id="quize">what is the answer of 3*4?</p>
+        <input
+          type="text"
+          id="inp"
+          placeholder="Enter your answer"
+          autofocus
+          autocomplete="off"
+        />
+        <!-- <input type="submit" value="submit ">  -->
+        <button type="submit" id="btn">SUBMIT</button>
+        <p id="status1" id="status2"></p>
+      </div>
+    </form>
+    <script>
+      let quize = document.getElementById("quize");
+      let input = document.getElementById("inp");
+      let status = document.getElementById("status1");
+      let btn = document.getElementById("btn");
+      let j =JSON.parse(localStorage.getItem("j"));
+      quize.innerHTML = quize[j]; 
+      if(!j)
+         j=0;
+      j++;
+      if(j==9 ){
+        j=0;
+      }
+      console.log('value of i is', j);
+      updateLocalStorage2();
+      let x = Math.floor(Math.random() * 10); // 1 to 10
+      console.log("x is ", x);
+      let flag = 0;
+      console.log("hello world");
+      let quiz = [
+        "What is 2 multiply by 7?",
+        "What is 4 multiply by 9?",
+        "What is 10/2 ?",
+        "What is 90+120?",
+        "What is 25 multiply by 2?",
+        "What is 23 + 10 ?",
+        "What is 10 multiply by 2?",
+        "What is 6 multiply by 7?",
+        "What is 90/2?",
+        "What is 55/5?",
+      ];
+      let answer = ["14", "36", "5", "210", "50", "33", "20", "42", "45", "11"];
+      quize.innerHTML= quiz[j];
+      let takeInput = 0;
+      let score = JSON.parse(localStorage.getItem("score")); 
+      if(!score){
+        score=0;
+      }
+      console.log("answer length is", answer.length);
+      function validAnswer() {
+        for (i = 0; i < answer.length; i++) {
+          if (input.value == answer[i]) {
+            console.log("answer mathed");
+            flag = 1;
+          }
+        }
+        if (flag) {
+          btn.setAttribute(
+            "style",
+            "background-color: green ; color: white; border: 3px solid green;"
+          );
+          status.innerHTML = "correct";
+          status.setAttribute("id", "status1");
+          score+=1;
+          updateLocalStorage();
+          console.log("score is",score);
+          return true;
+        } else {
+          btn.setAttribute(
+            "style",
+            "background-color: red ; color: white; border: 3px solid red; opacity:none"
+          );
+          
+          status.innerHTML = "Wrong";
+          status.setAttribute("id", "status2");
+          score=score-1;
+          updateLocalStorage();
+          console.log("score is", score);
+          return false;
+        }
+        j++;
+      }
+      function updateLocalStorage2(){
+        localStorage.setItem("j",JSON.stringify(j));
+      }
+      function updateLocalStorage() {
+          localStorage.setItem("score", JSON.stringify(score));
+        }
+    </script>
+  </body>
+</html>

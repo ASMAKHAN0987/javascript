@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgba(0, 162, 255,0.4);
+}
+.blurred{
+    filter: blur(5px);
+}
+/* body: */
+#header-left{
+    display: flex;
+    /* border:2px solid black; */
+    padding:20px;
+    border-right: 3px solid black;
+}
+#header-right{
+    font-size: 30px;
+}
+.current_temp{
+
+}
+#cloud{
+    /* display: flex; */
+}
+.curr_temp_sec_row{
+    /* mt */
+}
+.currImg{
+    width: 200px;
+    height:200px;
+}
+.current_weather_img{
+   font-size: 10rem;
+   cursor: pointer;
+   /* width: 100px; */
+   /* height: 100px; */
+}
+.daily_weather_img{
+    width: 120px;
+    height: 120px;
+}
+.hour_weather_img{
+    padding: 10px;
+    width: 100px;
+    height: 100px;
+}
+.weekly{
+    text-align: center;
+    margin-right: 10px;
+    border:1px solid black;
+    border-radius: 20px;
+}
+.weekly:hover{
+    opacity: 0.5;
+    cursor:pointer;
+}
+.currentTemp{
+    font-size: 5rem;
+    /* border:2px solid black; */
+}
+.small{
+    font-size: 5rem;
+}
+.weather_img_hourly{
+    font-size: 4rem;
+}
+.rowHour{
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border:2px solid black; */
+}
+.row1{
+    /* background-color: lightgray; */
+    background-color: darkslategray;
+}
+.row1 .col-md-2{
+    /* border:2px solid blue; */
+}
+.col-md-2{
+    text-align: center;
+    font-size: 20px;
+    /* font-weight: bold; */
+}
+.row2{
+    background-color:lightsteelblue;
+    color:black;
+}

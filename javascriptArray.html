@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let book = ["Math", "Physics", "Bio", "computer science"];
+      let book2 = ["Hindi", "Punjabi"];
+      let book3 = ["Islamiyat", "Ethics"];
+
+      let newBook = book.concat(book2, book3);
+      console.log(newBook);
+
+      //multidimensional array
+    //   let marks = [
+    //         [55,98],
+    //         [56,88],
+    //         [67,45]
+    //   ];
+    //   console.log("no 1 position element: ", marks[1][0]);
+      //if we just write marks[1] so output will be entire array at position 1
+    //   console.log("entire array at position 1: ", marks[1]);
+      //if we make array like this:
+    //   let marks = [
+    //         [55,[22,34]],
+    //         [56,88],
+    //         [67,45]
+    //   ]; 
+    //   console.log("array into array into array", marks[0][1][1]);
+    let marks = [
+            [55,98],
+            [56,88],
+            [67,45]
+      ];
+      console.table(marks);
+      //with the help of forEach we can fetch elements like this:
+      marks.forEach((activity
+      ) => {
+        activity.forEach((data)=> {
+            console.log(data);
+        })
+      });
+      function add(){
+        // console.log(arguments); //there is an array that is passed in this curly braces so it have all arguments we passed in the form of parameters.
+        // console.log(arguments[0]);
+        if(arguments.length == 0){
+            console.log("No parameter passed!");
+        }
+        else{
+            let add = 0;
+            for(let i=0 ; i< arguments.length ; i++){
+              add = add + arguments[i];
+            }
+            console.log("addition of these arguments are: ", add);
+        }
+      }
+    add(4,7,8,10,3,5,8,1,2); 
+      console.log("mathrandom", Math.random() - 0.5);
+      let arr= [1,4,6,9,3,2,11,22];
+      console.log("before sorting they are like: ", arr);
+      console.log("arrays are", arr.sort((a,b)=> a - b));
+    </script>
+  </body>
+</html>

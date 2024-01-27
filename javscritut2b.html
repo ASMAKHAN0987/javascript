@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript tut2 b</title>
+    <style>
+        #button{
+            display: flex;
+            width: 100%;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+
+        }
+        #btn{
+            width:200px;
+            height:100px;
+            font-size: 30px;
+            font-weight: bold;
+            border-radius: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="button"> 
+        <!-- regestered event via inline attribute -->
+    <!-- <button id="btn" onclick="btnClick()"> 
+        click me
+    </button> -->
+    <!-- second way to do this via event listner -->
+    <button id="btn">
+        Click Me
+    </button>
+</div>
+    <script>
+        function btnClick(){
+          alert("button was CLICKED");
+        }
+        let div = document.getElementById("btn");
+        // div.addEventListener("click",btnClick);
+        //now we can do this with the help of anonymous function like:
+        //in this we don't need to define function seprately we can define it directly in addEventListner
+        //it is usually used when function is used only one time
+        
+        div.addEventListener("mouseover", function(){
+            console.log("mouse is over");
+        });
+        div.addEventListener("mouseout", function(){
+            console.log("mouse is out");
+        });
+        div.addEventListener("click", function(){
+            console.log("button was clicked");
+        });
+        //we can remove event with the help of addEventListner
+        
+    </script>
+</body>
+</html>

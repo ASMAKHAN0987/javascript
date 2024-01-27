@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #btn{
+            width:100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        button{
+            color: brown;
+            border:3px solid peru;
+            width:240px;
+            font-size: 30px;
+            font-weight: bold;
+            height: 240px;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div id="btn">
+    <button onclick="clickMe()">Hello</button>
+</div> -->
+<script>
+    // let click = 0;
+    // function clickMe(){
+    //     console.log("click me ",click+1);
+    // }
+    for(let i = 0;i<=10;i++){
+    function count(){
+            setTimeout(() => {
+                console.log(i);
+            }, 1000*i);
+        }
+    count();
+    }
+    let rand = Math.floor(Math.random()*10);
+    
+</script>
+</body>
+</html>

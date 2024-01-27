@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Switcher</title>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+            padding: 10px 80px;
+        }
+        #heading{
+            text-align: center;
+            font-size: 50px;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        img{
+            width:100%;
+            height: 500px;
+            margin: 0 auto;
+            border-radius:40%;
+        }
+        #para{
+            font-size: 25px;
+            padding: 10px;
+            text-align: justify;
+        }
+        button{
+            border-radius: 50%;
+            padding:20px;
+        }
+        #btnBox{
+            text-align: right;
+        }
+        #btn1{
+         background-color: crimson;
+        }
+        #btn2{
+         background-color: yellow;
+        }
+        #btn3{
+         background-color: white;
+        }
+        #btn4{
+         background-color: blue;
+        }
+        
+    </style>
+</head>
+<body id="body">
+    <div id="btnBox">
+        <button id="btn1" onclick="backChang1()"></button>
+        <button id="btn2" onclick="backChang2()"></button>
+        <button id="btn3" onclick="backChang3()"></button>
+        <button id="btn4" onclick="backChang4()"></button>
+    </div>
+    <h1 id="heading">About Us</h1>
+    <div id="imageDiv">
+    <img id="image"   src="../../../pics/About-Us.png" alt="">
+    </div>
+    <p id="para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur odit ipsam qui? Odio, nostrum atque? Iure esse dolorum, veritatis cumque quasi pariatur quos aut tempora possimus eum molestiae debitis, inventore laborum repellat quod veniam perferendis cum dignissimos amet natus! Vitae sunt, pariatur accusamus tenetur maiores numquam consectetur ab beatae illo sint iusto, error veniam repellendus dolore dignissimos itaque laudantium velit esse modi labore laborum ullam fuga. Beatae, explicabo modi cupiditate nobis ipsam temporibus natus autem, officiis alias non, excepturi ex nihil possimus blanditiis quia odio impedit harum. Molestias nemo amet nostrum incidunt voluptatibus. Vero cupiditate fugit omnis accusamus quasi inventore! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut quod saepe enim dolor nemo fuga temporibus quas nulla pariatur necessitatibus voluptate, ex eaque, modi alias! Eligendi voluptatem repellat necessitatibus perferendis deserunt maiores similique, consequuntur iste, et aliquid ducimus distinctio tenetur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur ducimus qui accusamus itaque at sed consectetur facere assumenda. Suscipit illo est nobis iure, blanditiis natus, laborum voluptatem aperiam molestias incidunt harum nesciunt dolorum vero tempore. Necessitatibus consequuntur tempore, velit dolorum repellendus quisquam dolorem perferendis quibusdam suscipit eveniet rem ipsum labore quaerat commodi provident nihil debitis sapiente incidunt ex vero harum ipsa voluptates. Est alias nam minima harum possimus voluptatibus quis id facere sint laborum commodi accusamus praesentium molestias autem, voluptatum, ducimus perferendis soluta nihil cum pariatur qui? Quam at tempore vel ducimus temporibus et rem laborum labore odit sint. Odit.</p>
+    <script>
+        
+        // let btn1 = document.getElementById("btn1");
+        // let bd = document.getElementById("body");
+        // imageDiv.style.background = red;
+        // btn1.addEventListener("click",function(){
+        //     console.log("I am in btn1");
+        //     // bd.style.background = red;
+        // //    imageDiv.style.background = red;
+        // //    document.getElementById("imageDiv").style.background = "red";
+        // btn1.styel.background = "yellow";
+        // });
+        function backChang1(){
+            document.body.style.background = "crimson";
+            document.getElementById("para").style.background = "white";
+        }
+        function backChang2(){
+            document.body.style.background = "yellow";
+            document.getElementById("para").style.background = "white";
+
+        }
+        function backChang3(){
+            document.body.style.background = "white";
+        }
+        function backChang4(){
+            document.body.style.background = "blue";
+            document.getElementById("para").style.background = "white";
+        }
+    </script>
+</body>
+</html>

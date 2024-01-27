@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .content {
+        /* border:5px solid black; */
+        width: 400px;
+        height: 300px;
+        position: relative;
+        overflow: hidden;
+      }
+      .container {
+        width: 400px;
+        height: 300px;
+        position: relative;
+        /* border:1px solid black; */
+      }
+      .imageContainer{
+        width:400px;
+        display: flex;
+        height: 300px;
+        transition: transform 0.4s ease-in-out;
+        /* border-radius: 30px; */
+        /* overflow-x: hidden; */
+        /* overflow: scroll; */
+        /* transform: translateX(-800px); */
+      }
+      /* .imageContainer::-webkit-scrollbar {
+        display: none;
+      } */
+      .imageContainer img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 30px;
+      }
+      .image{
+        /* transform: translateX(-1200px); */
+        width:400px;
+      }
+      .fas {
+        padding: 0 10px;
+        color: white;
+        font-size: 30px;
+        cursor: pointer;
+      }
+      .fas:hover {
+        color: gold;
+      }
+      #left,
+      #right {
+        position: absolute;
+        z-index: 9;
+        top: 50%;
+      }
+      #left {
+        left: 0;
+      }
+      #right {
+        right: 0;
+      }
+    </style>
+    <title>imageSliderBySirhand</title>
+  </head>
+  <body>
+    <div class="content">
+      <!-- <div> -->
+      <i class="fas fa-angle-double-left" id="left"></i>
+      <i class="fas fa-angle-double-right" id="right"></i>
+      <!-- <div class="container"> -->
+          <div class="imageContainer">
+          <img src="picky/pix57.jpg" alt="" class="image" />
+          <img src="picky/pix58.jpg" alt="" class="image" />
+          <img src="picky/pix59.jpg" alt="" class="image" />
+          <img src="picky/pix60.jpg" alt="" class="image" />
+        <!-- </div> -->
+    </div>
+    </div>
+    <script>
+      // All selectors
+      let imgQuery = document.querySelectorAll(".image");
+      const imageContainer2 = document.querySelector('.container');
+      const preBtn1 = document.querySelector('#left');
+      const nextBtn1 = document.querySelector('#right');
+      const imageContainer = document.querySelector(".imageContainer");
+      console.log("image container: ",imageContainer);
+      // some variables
+      let count = 0;
+      let timeOut;
+      // calling function for setTimout
+      setImg();
+      function setImg() {
+        console.log("count: ",count);
+        console.log("ima herer");
+        if(count===-1){
+          count=imgQuery.length-1;
+        }else if(count===imgQuery.length){
+          count=0;
+        }
+        imageContainer.style.transform = `translateX(-${count*400}px)`;
+        timeOut = setTimeout(()=>{
+          count++;
+          setImg();
+        },4000)
+
+      }
+      preBtn1.addEventListener("click", (x)=>{
+        count--; 
+        console.log("clicked",count);
+        clearTimeout(timeOut);
+        setImg();
+      });
+      nextBtn1.addEventListener("click", ()=>{
+        count++;
+        console.log("clicked",count);
+        clearTimeout(timeOut);
+        setImg();
+      });
+    </script>
+  </body>
+</html>

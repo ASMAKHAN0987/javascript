@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>destructring</title>
+</head>
+<body>
+    <script>
+    var voxel = {x:3.6,y:7.4,z:6.54};
+    // var x = voxel.x;
+    // var y = voxel.y;
+    // var z = voxel.z;
+    const { x:a , y:b , z:c}=voxel;
+    console.log("now we have assigned variables using destructring", b);
+    const LOCAL_FORECAST = {
+        today:{min:72,max:83},
+        tomorrow:{min:73.3,max:84.5}
+    }
+    function getMaxOfTomorrow(forecast){
+      const{tomorrow:{max: maxOfTomorrow}}=forecast;
+      return maxOfTomorrow;
+    }
+    console.log("now nested object is destructed: ",getMaxOfTomorrow(LOCAL_FORECAST));
+</script>
+</body>
+</html>

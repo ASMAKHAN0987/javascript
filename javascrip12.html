@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio eius atque esse ratione. Laboriosam recusandae assumenda aspernatur voluptate odit labore minima architecto blanditiis molestias ab totam officiis voluptas fugiat facilis nesciunt doloribus, deserunt excepturi cumque! Nihil sed rem asperiores cupiditate!</p>
+    <p id="demo1"></p>
+    <script>
+        //Making objects using factory function
+        function course(titlee,notes){
+            return{
+                title: titlee,
+                notes: notes,
+            }
+        }
+        const course1 = course('asma',23);
+        // console.log(course);
+        console.log('course notes is ', course1.notes);
+        console.log('course title is ',course1.title);
+
+        //constructor
+        //Making objects using constructor
+        function Student(first, last, age , cls){
+            this.first = first;
+            this.last = last;
+            this.age = age;
+            this.cls = cls;
+            
+        }
+        let student1 = new Student('hasna', 'qayoum', 23 , 10);
+        console.log('details of a student are: ');
+        // document.getElementById('demo1').innerHTMl = JSON.stringify(student1);
+        // adding property in constructor object
+        student1.name = function(){
+            return course1.title + " " + course1.notes;
+        }
+        
+        console.log(student1);
+        console.log(student1.name());
+        ///we can add properties dynamically in constructor
+        Student.prototype.nationality = "Pakistani"; 
+        console.log('nationality of student is: ',student1.nationality);
+        Student.prototype.name1 = function(){
+            console.log("Good Evening Pakistan");
+        }
+        console.log('It is prototype function: ',student1.name1());
+        ///////////////////////////////////////////////////////////////
+                            //   MATH OBJECT
+        let x = Math.round(4.2226);
+        console.log('round of a number is: ', x);
+        ///////Generate Random NUmber
+        let x1 = Math.floor(Math.random()*11); //math floor func will remove decimal values and give us whole number 
+        console.log('random number is: ', x1);
+        // we can generate number b/w two ranges like 20 to 55
+
+        function getRandomNumber(min, max){
+            let x2= Math.floor(Math.random()* (max - min ) )+ min;
+            return x2;
+        }
+        console.log('Random number b/w 15 to 25: ',getRandomNumber(15,25));
+
+        /////////////////////////Date OBject///////////////////////////
+        let date = new Date();
+        console.log("Todays date is: ", date);
+    </script>
+</body>
+</html>                                                     

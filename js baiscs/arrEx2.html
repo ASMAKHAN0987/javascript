@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function first(arr,b){
+            if(b<0)
+            {
+                b="";
+            }
+            if(b == null){
+                return arr[0];  
+            }
+            return arr.slice(0,b);
+        }
+        console.log("arr elements are: ",first([],6));
+        //connecting strings together
+        let str = ["cat","rabbit","frog","fish"];
+        let output = str.reduce((acc,curr)=>{
+            acc = acc + ',' + curr;
+            return acc;
+        });
+        console.log("output is: ",output);
+        // or
+        let output2 = str.toString();
+        console.log("output2 is: ",output2);
+    </script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus repellendus optio quasi doloribus fugit praesentium molestias quis autem provident, quia quo minima minus dicta eaque? Doloribus eaque amet magni dolorum? </p>
+<ul>
+    <li id="f1">Home</li>
+    <li class="f2">Tutorial</li>
+    <li class="f2">FeedBack</li>
+    <li class="f2">Contact Us</li>
+    <li>What's new</li>
+</ul>
+<h2>Headings 1</h2>
+<div id="div1">
+    <p class="intro">paragraph</p>
+    <h2>heading 2</h2>
+    <p class="intro">paragraph 2</p>
+    <h2>heading 3</h2>
+    <p class="intro">paragraph 3</p>
+</div>
+<!-- Select to a parent -->
+<ul>
+    <li>Work</li>
+    <li id="list3">Blow</li>
+    <li>Each</li>
+    <li>NOw</li>
+</ul>
+<!-- select to a child -->
+<ul>
+    <li>first</li>
+    <li id="list4">Second</li>
+    <li>Third</li>
+</ul>
+<!-- change the innerHTML of a div -->
+<div id="intro">
+     <p>Hello this is a p tag</p>
+</div>
+<!-- now adding element somewhere between -->
+ <ul id="list5">
+    <li>one</li>
+    <li>Two</li>
+    <li>Three</li>
+    <li>Four</li>
+ </ul>
+ <ul id="menu">
+    <li>five</li>
+    <li>six</li>
+    <li>seven</li>
+    <li>eight</li>
+ </ul>
+ <h2 id="rep2">Woderful Advice</h2>
+    <!-- Insert Adjacent Element -->
+    <!-- it provide four positions to insert an element -->
+    <!-- before begin -->
+    <div id="insertAdjacent">
+        <!-- after begin -->
+        <h2>Heading</h2>
+        <p>THis is a p tag</p>
+        <!-- before end -->
+    </div>
+    <!-- after end -->
+<script> 
+   /*let list = document.getElementById("f1");
+   console.log(list);
+   console.log(list.innerHTML);
+   list.innerHTML = "<p>Hello</p>"; */ 
+   /*let list2 = document.getElementsByClassName("f2");
+   console.log(list2);
+   for(let i=0; i< list2.length; i++){
+    list2[i].innerHTML = "<p> Hello </p>"
+   } */ //amazing trick
+   /*let div1 = document.getElementById("div1");
+   let elm = div1.getElementsByTagName("h2");
+   for( let i=0 ; i < elm.length ; i++){
+    elm[i].innerHTML = "hello";
+   }*/
+   /*let elm = document.querySelectorAll("p.intro");
+   console.log(elm);
+   for(let i=0 ; i< elm.length; i++ ){
+    elm[i].innerHTML = "Loveliest";
+   }*/
+   /////////////////////TRAVERSING (indirect selection)////////////////
+   //how to select to a parent element
+   //parentElement
+   /*let elm1 = document.getElementById("list3");
+   let elm2 = elm1.parentElement;
+   elm2.innerHTML = "hello";*/
+   //how to select to a first child element
+//    let elm3 = document.getElementById("list4"); 
+//    let elm4 = elm3.firstElementChild;
+//    console.log(elm4);
+// how to select to a last child element
+/*let elm3 = document.getElementById("list4"); 
+    let elm4 = elm3.lastElementChild;
+    console.log(elm4.innerHTML);*/
+    //HOW TO SELECT TO CHILDREN
+    // let elm3 = document.getElementById("list4"); 
+    // let elm4 = elm3.children;
+    // console.log(elm4);
+    //how to select to siblings
+    // let elm3 = document.getElementById("list4"); 
+    // let elm4 = elm3.previousElementSibling;
+    //or
+    // let elm4 = elm3.nextElementSibling;
+    // console.log(elm4);
+     //first fetch the innerHtml then change/manipulate it.
+        let elm = document.getElementById("intro");
+        //fetching data from innerHTML
+        // let elmInner = elm.innerHTML;
+        //changing data from innerHTML
+        elm.innerHTML = "<h2> MY personality</h2>"
+        // console.log(elmInner);
+        //appeding data
+        let elm2 = document.createElement('p');
+        //now we can add some text into elm2
+        // let textNode = document.createTextNode("My name is Asma Saeed Khan. Studying compute science major love to go outside for trip. Don't like outside food but love to eat chicken patties and so many things like that.");
+        // elm2.appendChild(textNode);
+        
+        //we can add class and id to a newly and old container
+        elm2.className = "createByJs";
+        elm2.id = "dynamic";
+        //how to add element to a body
+        // document.body.appendChild(elm2);
+        //very easy way to add text into an element
+        elm2.textContent = "My name is Asma Saeed Khan. Studying compute science major love to go outside for trip. Don't like outside food but love to eat chicken patties and so many things like that.";
+        elm.appendChild(elm2);
+        //we can read the property of an element by text content
+        let f1 = document.getElementById("f1");
+        console.log('showing content', f1.textContent);
+
+        //add element somewhere not only at last
+        let list4 = document.getElementById("list5");
+        console.log("innerHtml of this is:", list4.innerHTML);
+        let nodeList4 = document.createElement("li");
+        nodeList4.textContent = "random";
+        // wanna add at first
+        // let pos = list4.firstElementChild;
+        //wannna add at second
+        // let pos = list4.firstElementChild.nextElementSibling;
+        //wanna add at third
+        // let pos = list4.firstElementChild.nextElementSibling.nextElementSibling;
+        //wanna add at so on
+        let pos = list4.firstElementChild.nextElementSibling.nextElementSibling.nextElementSibling;
+        console.log("position is: ", pos);
+        list4.insertBefore(nodeList4, pos);
+
+        //wanna add something somewhere in the body
+        let parent = document.body; //body is selected
+        let elm5 = document.createElement("h1");
+        elm5.textContent = "Dynamic programming";
+        parent.insertBefore(elm5,list4);
+         
+        //want to remove child elements
+         let list6 = document.getElementById("list5");
+         //wanna remove first element
+        //  let child = list6.firstElementChild;
+        //  list6.removeChild(child);
+
+         //wanna remove second element
+        //  let child = list6.firstElementChild.nextElementSibling;
+        //  list6.removeChild(child);
+         //wanna remove entire list
+        //  document.body.removeChild(list6);
+        //how to clone element
+        let parent2 = document.getElementById("menu");
+        let cloneElm = parent2.cloneNode(true);
+        document.body.appendChild(cloneElm);
+
+        //how to replace element
+        let newItem = document.createElement("li");
+        newItem.textContent = "Services";
+        let rep = parent2.firstElementChild.nextElementSibling;
+        parent2.replaceChild(newItem,rep);
+        let newItem2 = document.createElement("h2");
+        newItem2.textContent = "Life Never Change";
+        let rep2 = document.body.children[10];
+        document.body.replaceChild(newItem2,rep2);
+    
+        // insert adjacent Element
+           
+           let insertAdjacent = document.getElementById("insertAdjacent");
+           let html = "<h1>I am inserted by insertAdjacent Element</h1>"
+        //    insertAdjacent.insertAdjacentHTML("beforebegin",html);
+        //    insertAdjacent.insertAdjacentHTML("afterbegin",html);
+        //   insertAdjacent.insertAdjacentHTML("beforeend",html);
+         insertAdjacent.insertAdjacentHTML("afterend",html);
+</script>
+</body>
+</html>

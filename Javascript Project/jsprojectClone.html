@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      #head-container {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #container {
+        width: 700px;
+        height: 400px;
+        border: 10px solid blue;
+        border-radius: 30px;
+        background-color: aquamarine;
+      }
+      #div-h2 {
+        border: 4px solid red;
+        margin: 60px auto;
+        width: 90%;
+        border-radius: 30px;
+        text-align: center;
+        color: blue;
+        font-weight: bold;
+        font-size:30px;
+        background-color: white;
+      }
+      #inputDiv {
+        display: flex;
+        margin: 0 auto;
+        align-items: center;
+        justify-content: space-between;
+        width: 80%;
+        height: 60px;
+        margin-bottom: -17px;
+      }
+      #inputDiv input[type="number"] {
+        height: 40px;
+        width: 220px;
+        font-size: 20px;
+        padding-left: 20px;
+        border-radius: 30px;
+        border: 7px solid red;
+      }
+       input:focus{
+        outline: 5px solid white;
+       }
+      #inputDivHeading{
+        display: flex;
+        margin: 0 auto;
+        align-items: center;
+        justify-content: space-between;
+        width: 80%;
+        height: 60px;
+        margin-top: px;
+      }
+      #inputDivHeading h2{
+        border: 3px solid red;
+        background-color: white;
+        width: 240px;
+        font-size: 30px;
+        height: 40px;
+        border-radius: 30px;
+        text-align: center;
+        color: blue;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="head-container">
+      <div id="container">
+        <div id="div-h2"><h2>TEMPERATURE</h2></div>
+        <div id="inputDiv">
+          <input type="number" name="" id="input1"   value="0" />
+          <input type="number" name="" id="input2" value="32" />
+        </div>
+          <div id="inputDivHeading">
+            <h2>Celcius</h2>
+            <h2>Fahrenheit</h2>
+        </div>
+        </div>
+      </div>
+    </div>
+    <script>
+        let cel = document.getElementById("input1");
+        let fah = document.getElementById("input2");
+          cel.addEventListener("input",fun1);
+          fah.addEventListener("input",fun2);
+          //convert celsius to fahrenheit
+          function fun1(){
+            let x = cel.value;
+            let f = (x*9/5)+32;
+            if(x == "")
+               fah.value = "";
+            else if(!Number.isInteger(f))
+                fah.value = f.toFixed(4);
+            else
+                fah.value = f;
+
+          }           
+          //convert fahrenheit to celsius             
+          function fun2(){
+            let x = fah.value;
+            let c = (x-32) * 5/9;
+            if(x == "")
+               cel.value = "";
+            else if(!Number.isInteger(cel.c)) 
+                    cel.value = c.toFixed(4);
+            else
+             cel.value = c;
+          }       
+
+    </script>
+  </body>
+</html>

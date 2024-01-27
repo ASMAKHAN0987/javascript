@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        :root{
+            --top: -100px;
+            --bottoms: -90px;
+            --left: -30px;
+            --right: -30px;
+        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+      }
+      body {
+        background-color: #ccc;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #btn {
+        background-color: transparent;
+        /* width: 200px; */
+        /* height: 80px; */
+        padding:30px 50px;
+        font-size: 30px;
+        font-weight: bold;
+        border-radius: 10px;
+        border: 1px solid white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        border: none;
+        color:black;
+        position: relative;
+        overflow: hidden;  
+     }
+      #btn::before {
+        content: "";
+        position: absolute;
+        /* top:var(--top); */
+        top: var(--ypos);
+        left:var(--xpos);
+        border-radius: 50%;
+        transform: translate(-50%,-50%);
+        background-color: orangered;
+        width:0;
+        height:0;
+        z-index: -1;
+        /* opacity: 1; */
+        transition: 0.5s width, 0.5s height;
+        /* transition: 0.3s all ease; */
+      }
+      #btn:hover::before {
+        opacity: 1;
+        border-radius: 10px;
+        width: 450px;
+        height: 450px;
+        border-radius: 50%;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <a href="#" id="btn"><span>Button</span></a>
+    <script>
+      let btn = document.getElementById("btn");
+      btn.addEventListener("mouseover",(event)=>{
+         const x = event.pageX-btn.offsetLeft;
+         const y = event.pageY-btn.offsetTop;
+         btn.style.setProperty("--xpos",x + "px");
+         btn.style.setProperty("--ypos",y + "px");
+      });
+    </script>
+  </body>
+</html>

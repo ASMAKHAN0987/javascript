@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var b;
+    console.log("b is declared! ",b);
+    b=20;
+    var a = b;
+    console.log("b is assigned! ", b );
+    console.log("now a value is: ", a);
+    a=30+1;
+    console.log("value of b is: ", b);
+    console.log("value of a is : ", a);
+    //strings are immutable in js
+    var mystring = "ksma is good girl!";
+    mystring[0] = "a";
+    // string = "Asma is good girl";
+    console.log("now string is not  cuz of immutablity updated! ",mystring);
+    //I can get mystring character by character like 
+    console.log("second char of mystring is: ",mystring[1]);
+    //I can easily find last char without any counting like 
+    console.log("last char of mystring is: ", mystring[mystring.length - 1]);
+    //or with the help of mystring.length -1 we can find more char like this
+    //for ex this last char
+    console.log("last char of mystring is: ", mystring[mystring.length - 3]);
+    //there is a function to push array elements like
+    mystring2 =[20,30,40];
+    mystring2.push([60,40,90]);
+    console.log("mystring2 is : ", mystring2);
+    mystring3 = [[1,2,3],[4,5,6]];
+    console.log("orignal not updated array: ",mystring3);
+    mystring3.push([90,55,66,90,77]);
+    console.log("mystring3 is : after using push becuase push is used when we want to insert at last in the array", mystring3);
+    mystring3.unshift("33");
+    console.log("mystring3 is : after using ushift because ushift is used when we want to add array element at start",mystring3 );
+    console.log("now we are going to use shift or pop pop: remove at last shift: remove at start");
+    mystring3.pop();
+    console.log("now pop is used mystring3 is ", mystring3);
+    mystring3.shift(); 
+    console.log("shift is used mystring3 is: ", mystring3);
+</script>
+</body>
+</html>

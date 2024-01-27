@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>deepest closure</title>
+</head>
+<body>
+    <script>
+        // function x(){
+        //     var a= 7;
+        //     return function y(){
+        //         console.log(a);
+        //     }
+             //when you return function not just function code was return but whole closure was return the closure enclose function along its lexical scope. that was return 
+        // }
+        //var z= x(); //and it was put in z so when you call z somewhere in your program it still remember referecne of a.it tries out to find a and it prints a.
+        // console.log(z);
+        function a(){
+            var outest = 100;
+            return function b(){
+              var outer = 20;
+              return function c(){
+                console.log(outest,outer);
+              }
+            }
+        }
+        a()()();
+    </script>
+</body>
+</html>

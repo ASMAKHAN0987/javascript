@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+     />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+      }
+      #container {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: white;
+        /* border:2px solid black; */
+      }
+      #movieCard {
+        border: 1px solid black;
+        /* display: none; */
+      }
+      #img {
+        width: 300px;
+        height: 250px;
+        border: 1px solid black;
+      }
+      img {
+        height: 100%;
+        width: 100%;
+      }
+      #movieDetail {
+        width: 300px;
+        height: auto;
+      }
+      #movieDetail h1 {
+        margin: 10px;
+      }
+      #movieDetail p {
+        margin: 10px;
+      }
+      #btn {
+        border: none;
+        padding: 15px;
+        width: 100%;
+        background-color: green;
+      }
+      #btn a {
+        color: white;
+      }
+      #videoDiv{
+            height: 100%;
+            width:100%;
+            /* object-fit: fill; */
+            /* display: none; */
+            /* opacity: 0; */
+        }
+        #cross{
+            margin-bottom: 10px;
+            font-size: 20px;
+            /* color:white; */
+            border:1px solid white;
+            padding:10px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        #cross a{
+            color:white;
+        }
+       
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="movieCard">
+        <div id="img">
+          <!-- <img src="maxresdefault.jpg" alt="">
+             -->
+        <img src="picky/maxresdefault.jpg" alt="" />
+        </div>
+        <div id="movieDetail">
+          <h1 id="imageTitle">Ajab prem</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi
+            quibusdam cum, saepe dicta delectus maxime nostrum dolore
+            consequuntur dolorum voluptatum.
+          </p>
+          <button id="btn" onclick="goToVideo()">
+            <a href="#">Watch Now</a>
+          </button>
+        </div>
+      </div>
+      <!-- movie card ended -->
+      <div id="cross" onclick="goToCard()">
+        <a href="#">
+          <i class="fa-solid fa-xmark"></i>
+        </a>
+      </div>
+      <div id="videoDiv">
+          <video max-width="900px" height="500px" controls  preload="metada
+          ta">
+            <source src="picky/Construction Cinematic Videography.mp4" id="video"/>
+          </video>
+      </div>
+    </div>
+    <script>
+        videoDiv = document.getElementById("videoDiv");
+        movieCard = document.getElementById("movieCard");
+        container = document.getElementById("container");
+        videoTag = document.querySelector("video");
+        videoDiv.style.display = "none";
+        console.log(videoDiv);
+        
+        function goToCard(){
+          videoDiv.style.display = "none";
+          movieCard.style.display= "block";
+          container.style.background= "white";
+          videoTag.pause();
+        }
+        function goToVideo(){
+        //   videoDiv.load('#videoDiv');
+          videoDiv.style.display = "block";
+          movieCard.style.display= "none";
+          container.style.background= "black";
+          videoTag.currentTime = 0;
+          //   videoDiv.setAttribute = ("reload","true");
+        }
+    </script>
+  </body>
+</html>

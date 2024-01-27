@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascrip2</title>
+</head>
+<body>
+    <div class="container">
+        <div id="content"></div>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos cupiditate error vel vero cum ut, placeat voluptatibus quia, eum velit ullam veniam ad libero nesciunt voluptas reprehenderit ipsum nobis excepturi!
+        </p>
+    </div>
+</body>
+<script>
+    var string = 'this';
+    var name = 'Asma';
+    var channel = 'Love Food';
+    var message = 'Asma is a good student';
+    var temp = `${name} is a 'nice' person "and" he has a channel called ${channel}`;
+    console.log(temp);
+    var len= name.length;
+    console.log(`length of name is ${len}`);
+
+    //string with the help of constructor;
+    var y = new String("this");
+    console.log(`differnt way of making string with the help of constructor`);
+    // console.log(`\n string is ${y}`); 
+    console.log(y);
+ 
+    //dynamically add html
+    document.getElementById('content').innerHTML = '<h3> This is H3 heading </h3>';
+    var str = 'this is string';
+    //first occurence of a string
+    var position = str.indexOf('is');
+    console.log(position);
+    //Last occurence of a string
+    position = str.lastIndexOf('is');
+    console.log(position);
+    //substring from a string
+    var substr = str.slice(1,7);
+    console.log(`substring of str with the help of slice is "${substr}"`);
+    //another way of taking strings
+    substr = str.substr(1,6);
+    console.log(`substring of str with the help of substr is "${substr}"`);
+    //with the help of substring.
+    substr = str.substring(1,7);
+    console.log(`substring of str with the help of substring is "${substr}"`);
+    var replaced = str.replace('string','Asma Khan');
+    console.log(`original string is: "${str}"`);
+    console.log(`replaced string is: "${replaced}"`);
+    console.log(`uppercase function:`);
+    console.log(str.toUpperCase());
+    console.log(`lowercase funtion:`);
+    console.log(str.toLowerCase());
+    var newString = str.concat(' Hello World');
+    console.log(`Concatenate the string with the help of concat function is: before "${str}" After "${newString}"`);
+
+    var strWithWhiteSpaces = "   What are You doing   in the kitchen  ";
+    //it removes all the white spaces in the starting and ending
+    console.log(`remove white spaces from strating and ending`);
+    console.log(strWithWhiteSpaces.trim());
+
+    var char2 = str.charAt(2);
+    //taking char from str string at position 2
+    console.log(`taking char from str string at position 2 "${char2}"`);
+
+    //slicing of string
+    char2 = str[6];
+    console.log(`slicing of string "${char2}"`);
+</script>
+</html>

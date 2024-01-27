@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+    <title>Document</title>
+    <style>
+      /* @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap"); */
+      @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Poppins:ital,wght@0,600;0,700;0,800;0,900;1,500;1,600;1,700;1,800&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        /* justify-content: center; */
+        background-color: rgb(7, 50, 90);
+      }
+      #title {
+        font-size: 50px;
+        font-weight: bold;
+        color: white;
+        /* margin-bottom: 20px; */
+        margin: 60px 0 20px 0;
+      }
+      .container {
+        /* font-family: 'Caveat', cursive; */
+        font-family: 'Poppins', sans-serif;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 30px;
+        /* min-width: 300px; */
+        width:60%;
+        /* overflow-y:scroll; */
+        /* height:400px; */
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.6);
+      }
+      #formInput {
+        /* border:1px solid black; */
+        padding: 10px;
+        width: 90%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+      #search {
+      }
+      input[type="text"] {
+        width: 90%;
+        font-size: 20px;
+        border:none;
+        /* background-color: blue; */
+      }
+      #search:focus{
+        outline:none;
+      }
+      #searchDiv{
+        border:1px solid black;
+        padding: 10px 5px;
+        width:80%;
+        display: flex;
+        justify-content:center;
+        align-items: center;
+      }
+      #searchDiv:hover{
+        border:1px solid blue;
+      }
+      button {
+        outline: NONE;
+        border: NONE;
+      }
+      #searchBtn {
+        padding: 10px 20px;
+        font-size: 20px;
+        background-color: BLACK;
+        color: white;
+        /* font-weight: bold; */
+        /* border:none; */
+        border: 2px SOLID BLACK;
+        /* border-color:green; */
+      }
+      input[type="submit"] {
+        /* border:none; */
+        border: 2px solid black;
+      }
+      #searchBtn:hover {
+        /* border-color:green; */
+        color: white;
+        border: 2px SOLID green;
+        background-color: green;
+      }
+      #result {
+        width: 80%;
+        overflow-y:scroll;
+        height: 300px;
+      }
+      #result::-webkit-scrollbar{
+        width:10px;
+        height: 100%;
+      }
+      #word {
+        margin-top: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* border:1px solid black; */
+        border: none;
+        font-size: 20px;
+        border-radius: 4px 0  0 4px ;
+        border-left: 3px solid rgb(7, 50, 90);
+        padding: 10px;
+      }
+      #word h3 {
+      }
+      #word button {
+        font-size: 30px;
+      }
+      .fa-solid {
+      }
+      .details {
+      }
+      .details p {
+      }
+      #wordMeaing {
+      }
+
+      .example {
+        margin-top: 20px;
+        /* border:1px solid black; */
+        border-radius: 4px 0  0 4px ;
+        border-left: 3px solid rgb(7, 50, 90);
+        padding:10px;
+        font-size: 20px;
+      }
+      .synonym {
+        width:100%;
+        height: auto;
+        margin-top: 20px;
+        /* border:1px solid black; */
+        border-radius: 4px 0  0 4px ;
+        border-left: 3px solid rgb(7, 50, 90);
+        padding:10px;
+        /* background-color: aquamarine; */
+        font-size: 20px;
+      }
+      .synonym p{
+        width:100%;
+        /* border:1px solid black; */
+        height: auto;
+        /* overflow-x:scroll ; */
+      }
+      .hide {
+        display: none;
+      }
+      .load {
+        /* padding:10px;  */
+        width: 80%;
+        font-size: 15px;
+        font-weight: bold;
+        color: grey;
+        text-align: left;
+        /* border:1px solid black; */
+      }
+      .load p{
+        text-align: left;
+        /* border:1px solid black; */
+      }
+      .details {
+        /* margin-top: 20px; */
+        margin:20px 0 20px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: none;
+        font-size: 25px;
+        border-radius: 4px 0  0 4px ;
+        border-left: 3px solid rgb(7, 50, 90);
+        padding: 10px;
+      }
+      #wordMeaing {
+        /* display: flex; */
+        /* justify-content: space-between; */
+        /* align-items: center; */
+        /* border:1px solid black; */
+        text-align: left;
+        /* width:80%; */
+        margin-top: 10px;
+        padding-left:10px;
+        border: none;
+        font-size: 25px;
+        border-left: 3px solid rgb(7, 50, 90);
+        border-radius: 4px 0  0 4px ;
+        /* padding: 10px; */
+      }
+      #wordMeaing p {
+        /* border: 1px solid black; */
+        /* text-align: center; */
+      }
+      #wordMeaing h2 {
+        font-size: 30px;
+        font-weight: bold;
+      }
+      .example{
+        /* border:1px solid black; */
+      }
+      #span{
+        text-decoration: underline;
+        cursor:pointer;
+      }
+      #cross{
+        font-size: 20px;
+      }
+      #cross:hover{
+        color:gold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="title">Dictionary App</h1>
+    <div class="container">
+      <form action="" id="formInput">
+        <div id="searchDiv">
+        <input type="text" id="search" placeholder="Type the word here..."/>
+        <i class="fa-solid fa-xmark" id="cross"></i>
+        </div>
+        <button type="submit" id="searchBtn">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+      <div class="load">
+        <p>
+          type a word and press enter to get the meaning, example, pronunciation
+          and synonym of that typed word
+        </p>
+      </div>
+      <div id="result" class="hide">
+        <div id="word">
+          <h3 id="wordy">--</h3>
+          <button id="sound">
+            <i class="fa-solid fa-volume-high"></i>
+          </button>
+        </div>
+        <div class="details">
+          <p>--</p>
+          <p id="phonetic">--</p>
+        </div>
+        <div id="wordMeaing">
+          <h2>Meaning:</h2>
+          <p>
+            --
+          </p>
+        </div>
+        <div class="example">
+          <h2>Example</h2>
+          <p>--</p>
+        </div>
+        <div class="synonym">
+          <h2>Synonyms:</h2>
+          <p></p>
+        </div>
+      </div>
+    </div>
+    <script src="dictionaryApi.js"></script>
+  </body>
+</html>

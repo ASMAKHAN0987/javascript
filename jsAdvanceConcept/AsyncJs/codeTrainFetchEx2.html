@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: darkblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+            padding:20px;
+            background-color: aqua;
+            margin: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p class="poem"></p>
+    </div>
+    <script>
+        // console.log("hello");
+        // async function fetchingPoem(){
+        //     try{
+        //     let poemStream = await fetch('readme.txt');
+        //     console.log(poemStream);
+        //     let poem = await poemStream.text();
+        //     document.querySelector('.poem').innerHTML = poem;
+        //     }
+        //     catch(error){
+        //         console.log("there is some error");
+        //     }
+        // }
+        // fetchingPoem();
+
+        console.log('about to fetch a poem');
+      catchPoem()
+        .then(poem => {
+          document.querySelector('.poem').innerText = poem;
+          console.log('yay');
+        })
+        .catch(error => {
+          console.log('error!');
+          console.error(error);
+        });
+
+      async function catchPoem() {
+        const response = await fetch('readme.txt');
+        return await response.text();
+      }
+    </script>
+</body>
+</html>

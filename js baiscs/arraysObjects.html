@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arraysObjects</title>
+</head>
+<body>
+    <script>
+        arr = {
+          124: "Hania",
+          123: "Amana"  
+        }
+        console.log("name in the array: ", arr["124"]);
+        //factory function
+        function create_Obj(title,author,price,publishser){
+           return{
+              title: title,
+              Author: author,
+              price: price,
+              publishser: publishser
+           }       
+        }
+     let obj1 =  create_Obj("C++","Ahmed Jee",400,"Ali Book Depot");
+      console.log("new obj has values: ",obj1);
+      console.log("obj title is: ", obj1.title);
+      console.log("obj Author is: ", obj1.Author);
+      console.log("obj Price is: ", obj1.price);
+      console.log("obj Publisher is: ", obj1.publishser);
+
+    let obj2 = create_Obj("c","Waqas Ahmed", 500,"Chand book Depot");
+    console.log("new obj2 has values: ",obj2);
+    //constructor fucntion
+    function Course(title){
+        this.title = title;
+        this.enroll = function(){
+            console.log('you are successfully enrolled');
+        }
+    }
+    const obj3 = new Course("Python");
+    console.log("new obj using constructor: ", obj3.enroll());
+    obj3.enroll();
+    //if you want to make new function inside Course obj so you can achieve this by
+    obj3.call = function (){
+        console.log('hello asma khan');
+    }
+    obj3.call(); 
+    console.log(obj3.constructor);
+    console.log(obj2.constructor);
+    console.log(obj1.constructor);
+    </script>
+</body>
+</html>

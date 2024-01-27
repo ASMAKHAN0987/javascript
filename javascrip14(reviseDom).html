@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list1">
+        <li id="elm1">list1</li>
+        <li class="elm">list2</li>
+        <li class="elm">list3</li>
+        <li class="elm">list4</li>
+    </ul>
+    <p id="elm2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia voluptatum ex laudantium laborum cumque repellendus modi ullam eveniet delectus minima.</p>
+    <h1>HEADING OF POEM LOVE IS LIFE</h1>
+    <h1>Love</h1>
+    <h1>Is</h1>
+    <h1>Not</h1>
+    <h1>Only</h1>
+    <p>MY life</p>
+    <div id="specialList">
+    <ul>
+        <li>Love</li>
+        <li id="list2">Is</li>
+        <li>My</li>
+        <li>Life</li>
+    </ul>
+   </div>
+    <script>
+        let getById = document.getElementById("elm2");
+        console.log(getById.innerHTML);
+        getById.innerHTML = "<p>Wonderful friends</p>"
+        // let getByClass = document.getElementsByClassName("elm");
+        // console.log("list of two elements: ", getByClass.length);
+        // for(let i=0 ; i<=getByClass.length ; i++){
+        //     getByClass[i].innerHTML   = 'lay down';
+        // }
+        // let getByTagName = document.getElementsByTagName('li');
+        // for(let i=0; i<=getByTagName.length ; i++){
+        //     getByTagName[i].innerHTML = "NO ACCESS"
+        // }
+        string = ['Home' , 'Menu' , 'Tutorials', 'feedback'];
+        let parent = document.getElementById("specialList");
+        console.log('parent is now: ', parent);
+        let elementsChanByStrg = parent.getElementsByTagName('li');
+        console.log('now element is in elementsChanByStrg: ', elementsChanByStrg);
+        let string1;
+        for(let i=0; i<elementsChanByStrg.length ; i++){
+            string1= string[i];
+            console.log('value of string is: ', string1);
+            elementsChanByStrg[i].innerHTML = string1;
+        }
+
+        //traversing
+        //select parent
+         let elm = document.getElementById("list2");
+         let parent2 = elm.parentElement;
+         console.log(parent2); 
+         //select child
+         let elm2 = document.getElementById("list1");
+         let node =  elm2.firstElementChild;
+         console.log("list 1 first node", node);
+         //select siblings
+         let elm3 = document.getElementById("list2");
+         let node1 = elm3.previousElementSibling;
+         console.log("first element sibling of node 2 is: ", node1 );
+    </script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>scope and conditions</title>
+  </head>
+  <body>
+    <div>
+      <ul>
+        <li>item-1</li>
+        <li>item-2</li>
+        <li>item-3</li>
+        <li>item-4</li>
+        <li>item-5</li>
+        <li>item-6</li>
+        <li>item-7</li>
+      </ul>
+    </div>
+    <script>
+      var string = "asma";
+      //here you can see that we again declare string it won't give us any error so it is a big problem so will have
+      var string = "asma khan";
+      console.log(string);
+      {
+        var string = "asmoo";
+        console.log(string);
+      }
+      console.log(string);
+      console.log(`Now u can see here both are printing same answer`);
+      //that's why we use let here
+      console.log(
+        `With the help of let variable will be block level and global level distiguished`
+      );
+      let string2 = "hania amir";
+      {
+        let string2 = "amir rehman";
+        console.log(`block level string2 is: ${string2}`);
+      }
+      console.log(`global level string 2 is ${string2}`);
+
+      //const that never change
+      const constant = "I NEVER CHANGE because I am constant";
+      console.log(constant);
+      //IF YOU TRY TO CHANGE ME I WILL GIVE U AN ERROR
+      // constant = 'ok check it out';
+      console.log(`NOW IF AND ELSE`);
+      let age = 20;
+      if (age >= 30 && age <= 39) {
+        console.log(`Under 40`);
+      } else if (age >= 12 && age <= 19) {
+        console.log(`Under 20`);
+      } else {
+        console.log(`Abobe 40`);
+      }
+
+      //now lets study case statement in js
+      console.log(`\n "CASE STATEMENT"`);
+      const cups = 40;
+      switch (cups) {
+        case 40:
+          console.log(`Cups is 40`);
+          break;
+        case 41:
+          console.log(`Cups is 41`);
+          break;
+        case 42:
+          console.log(`Cups is 42`);
+          break;
+        case 43:
+          console.log(`Cups is 43`);
+          break;
+        default:
+          console.log(`cups is not 4 , 41 , 42, 43`);
+          break;
+      }
+      //primitive datatype
+      // let a = 1;
+      // let b= 2;
+      // let c = 3;
+
+      //object in js
+      let employee = {
+        name: "asma",
+        salary: 10,
+        "channel 2": "love food", // cuz of channel 2 we cant access this element like employee.channel 2 it will give us error we have to write it like employee[`channel 2`]
+        class: "BS IV",
+      };
+      console.log(employee);
+
+      //making object with  the help of arrays
+      //we also can say it is special type of objects
+      console.log(`objects with the help of arrays`);
+      let names = [1, 2, 3, "asma is so good"];
+      console.log(names);
+      //if we want just one element so we can have with the help of this
+      console.log(`we want one element with the help of names[0]`);
+      console.log(names[2]);
+
+      //another way of making objects with the help of new keyword
+      console.log(`another way of making object with the help of new keyword`);
+      let name2 = new Array(41, 2, 3, "sania ahsraf");
+      console.log(name2[3]);
+      console.log(`length of name2`);
+      console.log(name2.length);
+      name2 = name2.sort();
+      console.log(`array is sorted ${name2}`);
+      //if we want to push something at the end so we will use push method there
+      name2.push(22);
+      console.log(
+        `we have pushed an element in the array with the help of push method`
+      );
+      name2 = name2.sort(); 
+      console.log(name2);
+      console.log(`we can access elements of an object like this: `);
+      console.log(employee.channel);
+
+      //we can make array of some particular size
+      //like let names = new array(23);
+    </script>
+  </body>
+</html>

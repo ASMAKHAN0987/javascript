@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>randomWholeNum</title>
+</head>
+<body>
+    <script>
+        function randomWholeNum(){
+            return Math.floor(Math.random()*10);
+        }
+        console.log(randomWholeNum());
+        //we can also give them range so it will give us output or random num between min and max
+        function randomRange(myMin,myMax){
+           return Math.floor(Math.random() * (myMax-myMin+1)) +  myMin;
+        }
+        console.log("we have give it a range so outut will be in between min to max: ",randomRange(10,20));
+    </script>
+</body>
+</html>

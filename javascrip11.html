@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- ---------------------Displaying OBjects Properties-------------------- -->
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis ipsam ab
+      numquam voluptate! Nemo, quam id. Eligendi non eius beatae molestiae
+      nostrum. A dolorum harum cupiditate? Sapiente architecto nesciunt a?
+    </p>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo22"></p>
+    <script>
+      // ---------------------Displaying OBjects Properties--------------------
+      const course = {
+        lecture: 10,
+        section: 3,
+        title: "javascript",
+        notes: {
+          introduction: '"welcome to js course"',
+        },
+        enroll() {
+          console.log("Your are successfully enrolled");
+        },
+        teacher: {
+          teach() {
+            return "Hamida" + this.lecture + this.title;
+          },
+        },
+      };
+      //     In the example above, this refers to the person object.
+
+      // I.E. this.firstName means the firstName property of this.
+
+      // I.E. this.firstName means the firstName property of person.
+      course.enroll();
+      //here is gonna show object of course
+      console.log("here I am gonna use object fun");
+      console.log(course);
+      course.price = 99;
+      console.log(course.notes.introduction);
+      course.callName = function () {
+        return "Happy Wala BirthDay!".toUpperCase();
+      };
+      console.log(course.callName());
+      // 1: Displaying the Object Properties by name
+      document.getElementById("demo").innerHTML =
+        course.lecture +
+        " " +
+        course.section +
+        " " +
+        course.notes.introduction +
+        "  " +
+        course.callName();
+      console.log(course);
+      // access elements of objects using for loop
+      const person = {
+        name: "adil",
+        age: 30,
+        city: "New York",
+      };
+      let txt = "";
+      for (let x in person) {
+        txt += person[x] + " ";
+      }
+      document.getElementById("demo1").innerHTML = txt;
+      // Using JSON.stringify()
+      // Any JavaScript object can be stringified (converted to a string) with the JavaScript function JSON.stringify():
+      const person1 = {
+        name: "adil",
+        today: new Date(),
+      };
+      document.getElementById("demo2").innerHTML = JSON.stringify(person1);
+
+      // Any JavaScript object can be converted to an array using Object.values():
+      // myArray is now a JavaScript array, ready to be displayed:
+      // Displaying the Object using Object.values()
+      const person2 = {
+        name: "Hamza",
+        height: 5.5,
+        Nickname: "Haider",
+      };
+      // const myArray= Object.Values(person2);
+      // document.getElementById("demo3").innerHTML = myArray;
+
+      const person3 = {
+        name: "hamza",
+        age: function () {
+          return 30;
+        },
+      };
+      person3.age = person3.age.toString();
+      // let myString = JSON.stringify(person3);
+      document.getElementById("demo22").innerHTML = JSON.stringify(person3);
+       console.log("different data");
+      const computer = "brands";
+      const object3 = {
+        price: 30,
+      }
+       object3.computer = ["hp", "dell", "apple"];
+      console.log(object3.brands); //undefined
+      console.log(object3.computer); //['hp', 'dell', 'apple']
+
+      object3[computer] = ["hp", "dell", "apple"];
+      console.log(object3.brands); //['hp', 'dell', 'apple']
+    //   object3.greetings = function (){
+    //       console.log('Hello buddies');
+    //   }
+    function sayHello(){
+        console.log("hello buddies!");
+    }
+    object3.greetings = sayHello;
+      object3.greetings();
+    </script>
+  </body>
+</html>

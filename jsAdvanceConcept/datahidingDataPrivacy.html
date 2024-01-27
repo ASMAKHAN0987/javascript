@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>datahidingAndPrivacy</title>
+</head>
+<body>
+   <script>
+    // but it is not scalable code if we want to add decrement function there as well so we will make constructor function for that.
+//    function outer(){
+//     let counter=0;
+//    return function incrementCounter(){
+//       counter++;
+//       console.log(counter);
+//    } 
+// }
+// let counter= outer();
+// counter();
+function counter(){
+    let count=0;
+    this.incrementCounter=function (){
+        count++;
+        console.log(count);
+    }
+    this.decrementCounter=function (){
+        count--;
+        console.log(count);
+    }
+}
+let count = new counter();
+count.incrementCounter();
+count.incrementCounter();
+count.decrementCounter();
+</script>
+</body>
+</html>

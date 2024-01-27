@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="QuizesApp.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <form class="form" id="fom" onsubmit=" return validAnswer()">
+      <h1 id="heading">Quiz App</h1>
+      <div id="box">
+        <p id="scoreHeading">Score:<span id="score">0</span></p>
+        <p id="quize">what is the answer of 3*4?</p>
+        <input
+          type="text"
+          id="inp"
+          placeholder="Enter your answer"
+          autofocus
+          autocomplete="off"
+        />
+        <!-- <input type="submit" value="submit ">  -->
+        <button type="submit" id="btn" onclick="clickMe()">SUBMIT</button>
+        <p id="status1" id="status2"></p>
+      </div>
+    </form>
+    <script>
+      quize = document.getElementById("quize");
+      input = document.getElementById("inp");
+      button = document.getElementById("btn");
+      scored = document.getElementById("score");
+      scored.innerHTML = sessionStorage.count;
+      console.log(scored.innerHTML);
+      let score = 0;
+      let Quizes = [
+        "What is 2 multiply by 7?",
+        "What is 4 multiply by 9?",
+        "What is 10/2 ?",
+        "What is 90+120?",
+        "What is 25 multiply by 2?",
+        "What is 23 + 10 ?",
+        "What is 10 multiply by 2?",
+        "What is 6 multiply by 7?",
+        "What is 90/2?",
+        "What is 55/5?",
+      ];
+      let answer = ["14", "36", "5", "210", "50", "33", "20", "42", "45", "11"];
+      //quize will come randomly
+      let rand = Math.floor(Math.random() * 10);
+      quize.innerHTML = Quizes[rand];
+      console.log(answer[rand]);
+      console.log(input.value);
+
+      // validate function
+      function validAnswer() {
+        if (input.value === answer[rand]) {
+          button.style.background = "green";
+          button.style.border = "none";
+          sessionStorage.count
+            ? sessionStorage.count++
+            : (sessionStorage.count = 1);
+          scored.innerHTML = sessionStorage.count;
+          return true;
+        } else {
+          console.log("answer is wrong");
+          button.style.background = "red";
+          button.style.border = "none";
+          sessionStorage.count
+            ? sessionStorage.count--
+            : (sessionStorage.count = 0);
+          scored.innerHTML = sessionStorage.count;
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>

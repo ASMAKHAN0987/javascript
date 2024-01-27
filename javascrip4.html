@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let name1 = "asma";
+        let name2 = "hania";
+        let name3 = "firdous";
+        let name4 = "rimsha";
+        let name5 = "Sonia";
+        let greetText = "Good Morning";
+        // console.log(name1 + " is a good girl");
+        // console.log(name2 + " is a good girl");
+        // console.log(name3 + " is a good girl");
+        // console.log(name4 + " is a good girl");
+        // console.log(name5 + " is a good girl");
+        function greetings(){
+          return("hello pakistan");
+        }
+        function sum(a,b,c){
+            let d= a+b+c;
+            return(d);
+        }
+        function greet(name, greetText ="hello Guys" // it is default value of greetText if we don't pass greetText value while calling so it will use this value
+         ){
+            console.log(greetText + " " + name);
+            console.log(name + " is a good girl");
+        } 
+        greet(name1 , greetText);
+        greet(name2, greetText);
+        greet(name3, greetText);
+        console.log(`sum of three numbers is: `);
+        let returnSum = sum(1,2,5);
+        console.log(returnSum);
+
+        let retrunGreetings = greetings();
+        console.log(retrunGreetings);
+    </script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHANGE CSS VIA JS</title>
+    <style>
+        #btn{
+            background-color: red;
+            color: white;
+            width: 200px;
+            height: 150px;
+        }
+        .color{
+          background-color: yellow;
+          color:blue;
+        }
+        .dim{
+          border: 1px solid red;
+          padding: 100px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">Send</button>
+    <br>
+    <br>
+    <br>
+    <div id="div1" class="color dim">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime at quo perspiciatis assumenda fuga, temporibus nobis deserunt libero laboriosam quasi?</p>
+    </div>
+    <script>
+        //set attribute in js
+      let btn = document.getElementById("btn");
+      btn.setAttribute("id","form1");
+      let val = btn.getAttribute("name");
+      console.log("getAttribute of btn is: ",val);
+      //remove attribute
+    //   btn.removeAttribute("name");
+    //there is another attribute which is hasAttribute
+      //firstway it will replace all previous inline css
+    //   so we don't want it to replace but to add so we can write like this btn.style.cssText += "background-color: red; color:white";
+    //   btn.style.cssText = "background-color: red; color:white; width:150px; height:50px; border-radius: 30px; font-size: 30px; font-weight:bold";
+    //second way
+    //it also replace the previous css
+    //   btn.setAttribute('style','background-color: red; color:white; height:50px; border-radius:30px; font-size: 30px; font-weight:bold');
+      //third way
+    //   btn.style.color = "yellow";
+
+    //getComputedStyle
+    //tell us which style is currently applied on tag
+      let css = getComputedStyle(btn);
+      console.log("current sytle we want to check:");
+      console.log("current color: ", css.color);
+
+      //change css via classes
+      //first come to know which classes has been apllied on div tag
+      let div = document.getElementById("div1");
+      console.log('className of div is: ',div.className);
+      //now add class into div tag
+      //it will add another class into it 
+      // div.className += " layout";
+      //can remove it as well
+      // div.className.remove("layout");
+      console.log("This is another way to know about classes: ",div.classList);
+      //so we can see it with the help of for loop as well
+      //  for(let css of div.classList){
+      //       console.log("now value of class is: ", css);
+      //  }
+      //we can add class by classList as well
+      // div.classList.add("l1");
+      //we can remove it as well 
+      div.classList.remove("l1");
+      // div.classList.replace("color","dim");
+      //to know class color is applied on it or not
+      var res = div.classList.contains("color");
+      console.log("now tell us classList has color attribute or not: ", res);
+      var res = div.classList.contains("layout");
+      console.log("now tell us classList has color attribute or not: ", res);
+      //now we have another class that is toggle 
+      //it will remove class if we applied before and apply the class if it is not available
+      div.classList.toggle("layout");
+      console.log("classList", div.classList);
+      //come to know width and height of div
+      //offset include border, margin and padding  with height and width
+      var width = div.offsetWidth;
+      console.log("width is in offset: ", width);
+      var height = div.offsetHeight;
+      console.log("height is in offset: ", height);
+      //client doesn't include border and margin but padding
+      var width = div.clientWidth;
+      console.log("width is in offset: ", width);
+      var height = div.clientHeight ;
+      console.log("height is in offset: ", height);
+
+    </script>
+</body>
+</html>

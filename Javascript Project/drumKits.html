@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #aud {
+        display: none;
+      }
+      .img {
+        width:350px;
+        height: 350px;
+        border-radius: 30px;
+        border:1px solid black;
+        background-image: url('picky/eagel.jpg');
+        background-size: 100%;
+        background-repeat: no-repeat;
+      }
+      .img.divSize{
+        animation: divSize 0.3s;
+      }
+      .img:active{
+        background-size: 105%;
+      }
+      @keyframes divSize {
+        50% {
+          scale: 0.91;
+        }
+        100% {
+          scale: 1;
+        }
+      }
+      @keyframes Backgroundsize {
+        0%{
+            background-size: 105%;
+        }
+        100%{
+            background-size: 100%;
+        }
+      }
+      #char{
+        display: none;
+      }
+    </style>
+  </head>
+  <body id="body" onkeypress="keyPress(event)">
+    <div class="img">
+      <audio src="audio/aud8.mp3" id="aud"></audio>
+    </div>
+    <script>
+      let image = document.querySelector(".img");
+      let audio = document.querySelector("#aud");
+      let body = document.querySelector('#body');
+    //   click event
+      image.addEventListener("click", () => {
+        audio.play();
+      });
+    //   keyPress event
+      function keyPress(e){
+          console.log("value of e: ", e.keyCode);
+          if(e.keyCode == 101){
+          image.classList.remove("divSize");
+          void image.offsetWidth;
+          image.classList.add("divSize"); 
+          audio.play();
+        }
+      }
+    </script>
+  </body>
+</html>

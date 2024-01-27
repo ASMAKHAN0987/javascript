@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>wordCounter</title>
+    <style>
+      body {
+        margin-top: 50px;
+        width: 100vw;
+        /* height: 100vh; */
+      }
+      #top-heading {
+        border: 5px solid blue;
+        margin: 0 auto;
+        color: white;
+        background-color: blue;
+        padding: 20px;
+        font-size: 40px;
+        width: 700px;
+        text-align: center;
+      }
+      #box {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        width: 100%;
+        height: 70%;
+      }
+      #textarea {
+        width: 700px;
+        height: 300px;
+        resize: none;
+        border-radius: 0 0 30px 30px;
+        padding: 20px;
+        font-size: 30px;
+        border:5px solid black
+      }
+      #counter {
+        margin: 0 auto;
+        border: 5px solid aqua;
+        width: 701px;
+        height: 50px;
+        font-size: 30px;
+        text-align: center;
+        padding-top: 10px;
+        border-radius: 30px;
+        background-color: aqua;
+      }
+      #counter span{
+        font-weight: bold;
+      }
+      #btn{
+        margin: -5px -100px 0 120px;
+        /* margin-left: 150px; */
+        float: left;
+        padding:15px 10px;
+        border-radius: 30px;
+        background-color: blue;
+        color:white;
+        font-weight: bold;
+        border:none;
+        font-size: 18px;
+      }
+      button{
+        width: 150px;
+      }
+      #btn:hover{
+        opacity: 0.7;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="top-heading">WORDS COUNTER</h1>
+    <div id="box">
+      <textarea name="" id="textarea"></textarea>
+    </div>
+    <div id="counter">
+      <button id="btn">wordsCount</button>
+      <span id="wordy"> 0 </span> Words
+      <span id="charactersCount"> 0 </span> Characters
+    </div>
+    <script>
+         let string,word=0;
+         let character = 0;
+         let wordy = document.getElementById("wordy");
+        let wordsCount = document.getElementById("textarea"); 
+        let charactersCount = document.getElementById("charactersCount");
+        let i=0;
+        wordsCount.addEventListener("input",function(){
+             let flag=0;
+             string = wordsCount.value;
+             console.log(string);
+             for(; i<string.length ; i++){ 
+              flag=1;
+              character++;
+              console.log("value of i",i);
+              if(i == 0 && (string[i] >= "a" && string[i] <= "z") || (string[i] >= "A" && string[i] <= "Z"))
+               word++;
+              else if((string[i-1] == ' ' || string[i-1] == '.') && (string[i] >= "a" && string[i] <= "z") || (string[i] >= "A" && string[i] <= "Z"))
+               word++;
+              } 
+              if(flag==0)
+              {
+                i--;
+                character--;
+              }
+              wordy.innerHTML = word;
+              charactersCount.innerHTML = character;
+              // character = 0;
+              // word = 0;
+        });
+        
+        // document.getElementById("btn").addEventListener("click",function(){
+        //     let word=0, i=0;
+        //     console.log("string is", string);
+        //     for(let i= 0; i<string.length ; i++){
+        //       character++;
+        //       if(i == 0 && (string[i] >= "a" && string[i] <= "z") || (string[i] >= "A" && string[i] <= "Z"))
+        //        word++;
+        //       else if((string[i-1] == ' ' || string[i-1] == '.') && (string[i] >= "a" && string[i] <= "z") || (string[i] >= "A" && string[i] <= "Z"))
+        //        word++;
+        //       } 
+        //       wordy.innerHTML = word;
+        //     // console.log("words are:", word);
+        //       charactersCount.innerHTML = character;
+        //       character = 0;
+        // }
+        // );
+         
+    </script>
+  </body>
+</html>

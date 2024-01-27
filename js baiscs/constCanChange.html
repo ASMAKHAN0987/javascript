@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>constCanChange
+    </title>
+</head>
+<body>
+    <script>
+        function freezeObj(){
+            "use strict";
+            const MATH_CONST = {
+                PI: 3.14
+            };
+            // Object.freeze(MATH_CONST);
+            // try{
+            //     MATH_CONST.PI = 99.9;
+            // }
+            // catch(ex){
+            //    console.log(ex);
+            // }
+            MATH_CONST.PI = 89;
+            return MATH_CONST.PI;
+        }
+        console.log("const value is after updating: ",freezeObj());
+    </script>
+</body>
+</html>

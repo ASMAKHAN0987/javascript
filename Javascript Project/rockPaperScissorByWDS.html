@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .selections{
+            margin-top: 100px;
+            display: flex;
+            justify-content: center;
+        }
+        .selection{
+            background:none;
+            border:none;
+            outline:none;
+            cursor:pointer;
+            font-size: 70px;
+            transition: 0.5s;
+        }
+        .selection:hover{
+            transform: scale(1.3);
+        }
+        .result{
+            border:1px solid black;
+            width:100%;
+            margin-top: 30px;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            grid-template-columns: repeat(2,1fr);
+            justify-items: center;
+            align-items: center;
+            font-size: 2rem;
+         }
+          .you,.computer{
+            font-size: 2rem;
+          }
+          .result-score{
+            margin-left: .1rem;
+            font-size: 1rem;
+            color:#333;
+          }
+          .result-selection{
+            opacity: 0.5;
+          }
+          .result-selection.winner{
+            opacity: 1;
+            font-size: 2.5rem;
+          }
+    </style>
+</head>
+<body>
+    <div class="selections">
+        <button class="selection" data-selection="rock">✊</button>
+        <button class="selection" data-selection="paper">✋</button>
+        <button class="selection" data-selection="scissor">✌️</button>
+    </div>
+    <div class="result">
+        <div class="you">
+            You
+            <span class="result-score">0</span>
+        </div>
+        <div class="computer">
+            Computer
+            <span class="result-score">0</span>
+        </div>
+        <div class="result-selection winner">✊</div>
+        <div class="result-selection winner">✊</div>
+        <div class="result-selection">✊</div>
+        <div class="result-selection">✊</div>
+        <div class="result-selection winner">✊</div>
+        <div class="result-selection">✊</div>
+    </div>
+    <script src="rockPaperScissorByWDS.js">
+    </script>
+</body>
+</html>

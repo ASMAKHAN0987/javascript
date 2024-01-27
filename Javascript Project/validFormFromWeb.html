@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>Registeration form</title>
+</head>
+<body>
+<h1>Welcome To My Domain</h1>
+Have a Nice day.
+<form name='reg' onsubmit="return demo();">
+<label for="user">UserName:</label>
+<input type="text" name="user" size="13" /><br>
+<label for="pass">Password:</label>
+<input type="password" name="pass" size="13" /><br>
+<label for="add">Address:</label>
+<input type="text" name="add" size="53" /><br>
+<label for="count">Country:</label>
+<select name="count">
+<option selected="" value="Default">(Please select a country with below options)</option>
+<option value="In">India</option>
+<option value="USA">America</option>
+<option value="ch">China</option>
+<option value="JN">Japan</option>
+<option value="PK">Pakistan</option>
+</select><br>
+<label for="email">Email:</label>
+<input type="text" name="email" size="53" /><br>
+<label id="gend">Gender:</label>
+<input type="radio" name="m" value="Male" /><span>Male</span>
+<input type="radio" name="f" value="Female" /><span>Female</span><br>
+<input type="submit" name="submit" value="Submit" />
+</form>
+<script>
+function demo()
+{
+var username = document.registration.user;
+var pass = document.registration.pass;
+var address = document.registration.add;
+var country = document.registration.count;
+var emails = document.registration.email;
+var male = document.registration.m;
+var female = document.registration.fsex; 
+if(user_validation(username,6,13))
+{
+if(pass_validation(pass,8,11))
+{
+if(numeric(address))
+{
+if(countries(country))
+{
+if(emailvalidation(emails))
+{
+if(gendervalidation(male,female))
+{
+}
+}
+}
+}
+}
+}
+return false;
+}
+function user_validation(username,x,y)
+{
+varuserlength = username.value.length;
+if (userlength == 0 || userlength>= y || userlength< x)
+{
+alert("User Name should not be empty please enter the characters and length between "+x+" to "+y);
+username.focus();
+return false;
+}
+return true;
+}
+function pass_validation(pass,x,y)
+{
+varpasslength = pass.value.length;
+if (passlength == 0 ||passlength>= my || passlength< mx)
+{
+alert("Password should not be empty please enter password and length between "+x+" to "+y);
+passid.focus();
+return false;
+}
+return true;
+}
+function numeric(address)
+{
+var let = /^[0-9a-zA-Z]+$/;
+if(address.value.match(let))
+{
+return true;
+}
+else
+{
+alert('User address must have alphanumeric characters please enter the input as alphanumeric format');
+address.focus();
+return false;
+}
+}
+function countries(country)
+{
+if(country.value == "Default")
+{
+alert('Choose your country from the given list');
+country.focus();
+return false;
+}
+else
+{
+return true;
+}
+}
+function emailvalidation(emails)
+{
+var mf = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+if(emails.value.match(mf))
+{
+return true;
+}
+else
+{
+alert("Please enter valid email address!");
+emails.focus();
+return false;
+}
+}
+function gendervalidation(male,female)
+{
+x=0;
+if(male.checked)
+{
+x++;
+} if(female.checked)
+{
+x++;
+}
+if(x==0)
+{
+alert('Select the gender either Male/Female');
+male.focus();
+return false;
+}
+else
+{
+alert(' Given data is Submitted Successfully');
+window.location.reload()
+return true;}
+}
+</script>
+</body>
+</html>

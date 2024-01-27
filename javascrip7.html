@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manipulating DOM</title>
+  </head>
+  <body>
+    <!-- DOM documentary Object model -->
+    <!-- With the object model, JavaScript gets all the power it needs to create
+    dynamic HTML: JavaScript can change all the HTML elements in the page
+    JavaScript can change all the HTML attributes in the page JavaScript can
+    change all the CSS styles in the page JavaScript can remove existing HTML
+    elements and attributes JavaScript can add new HTML elements and attributes
+    JavaScript can react to all existing HTML events in the page JavaScript can create new HTML events in the page -->
+    <!-- In other words: The HTML DOM is a standard for how to get, change, add, or delete HTML elements. -->
+
+    <!-- The HTML DOM is a standard object model and programming interface for HTML.
+    It defines: The HTML elements as objects The properties of all HTML elements
+    The methods to access all HTML elements The events for all HTML elements -->
+    <div id="main" class="container">
+      <ul id="nav">
+        <li>Home</li>
+        <li>About</li>
+        <li>Services</li>
+        <li>More About us</li>
+        <li>Contact us</li>
+      </ul>
+    </div>
+    <div class="container">another container</div>
+    <div id="paragraph">
+    <p id="demo">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quos ducimus earum. Necessitatibus nam ducimus voluptatibus nemo aut iure architecto?
+    </p>
+</div>
+<h1 id="heading">Pakistan Zindabad Paindabad</h1>
+
+
+
+    <!-- ...........................................................................................................................................................................................................................................................................................................................................................................JAVASCRIPT.........................-->
+    <script>
+      let main = document.getElementById("main");
+      console.log(main);
+      let nav = document.getElementById("nav");
+      console.log(nav);
+      let container = document.getElementsByClassName("container");
+      console.log(container);
+      //by selectors
+      let sel = document.querySelector("#nav>li");
+      console.log("selector returns: ", sel);
+
+      //selector return only one element first one
+      let sel1 = document.querySelector(".container");
+      console.log("selector returns only one element that is first one", sel1);
+      let sel2 = document.querySelectorAll(".container");
+      console.log("\n\nselector returns all ", sel2);
+      document.getElementById("heading").innerHtml = "<h1>Pakistan Won the Match</h1>"
+      document.getElementById("demo").innerHTML = "pakistan won the match and give the biggest happiness to pakistan we are feeling proud Naseem Shah who over this match with great victory that we are not expecting thank you...";
+    </script>
+  </body>
+</html>

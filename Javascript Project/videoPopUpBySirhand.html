@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+     />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+      }
+      body{
+        background-color: black;
+      }
+      #container {
+        max-width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        /* border:1px solid white; */
+      }
+      #movieCard {
+        max-width: 400px;
+        height: auto;
+        border: 1px solid white; 
+        margin:0 20px 0 20px;
+      }
+      #img{
+        height: 230px;
+        width:100%;
+      }
+      img {
+        object-fit: fill;
+        width:100%;
+        height: 100%;
+      }
+      .videoDiv{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width:100%;
+        height: 100vh;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: black;
+        /* border:5px solid white; */
+        opacity: 1;
+        transition: opacity 0.7s;
+      }
+      .videoDiv video{
+        width: 100%;
+        height: 100%;
+      }
+      #video {
+        position: relative;
+        /* width:900px; */
+        max-width:900px;
+        height: 80%;
+        outline: none;
+      }
+      .videoDiv.active{
+        visibility:hidden;
+        opacity: 0;
+       }
+      #movieDetail h1 {
+        text-align: center;
+        margin: 10px;
+        color:white;
+       }
+      #movieDetail p {
+        margin: 10px 20px 20px 10px;
+        color:white;
+       }
+      #btn {
+        border: none;
+        padding: 20px;
+        width: 100%;
+        background-color: green;
+       }
+      #btn a {
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+      }
+      #btn:hover{
+        background-color: orange;
+      }
+      #cross { 
+        margin-bottom: 20px;
+        font-size: 20px;
+        border: 1px solid white;
+        padding: 10px 15px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+      #cross a {
+        color: white;
+      }
+      @media (max-width:858px){
+        .videoDiv #video{
+          max-width:90%;
+          height: auto;
+        }
+       }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div>
+        <div id="movieCard">
+          <div id="img">
+            <img src="picky/maxresdefault.jpg" alt="" id="img"/>
+          </div>
+          <div id="movieDetail">
+            <h1 id="imageTitle">Ajab prem</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Excepturi quibusdam cum, saepe dicta delectus maxime nostrum
+              dolore consequuntur dolorum voluptatum.
+            </p>
+            <button id="btn" onclick="goToVideo()">
+              <a href="#">Watch Now</a>
+            </button>
+          </div>
+        </div>
+    
+        <div class="videoDiv" >
+            <div id="cross" onclick="goToCard()">
+                <a href="#">
+                  <i class="fa-solid fa-xmark"></i>
+                </a>
+              </div>    
+          <div id="video">
+            <video
+              controls
+              preload="metadata">
+              <source src="picky/Construction Cinematic Videography.mp4" />
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+        let videoDiv = document.querySelector(".videoDiv");
+        let video = document.querySelector("video");
+        goToCard();
+        function goToVideo(){
+          videoDiv.classList.remove("active"); 
+          video.currentTime = 0;       
+          }
+        function goToCard(){
+          videoDiv.classList.add("active");
+          video.pause(); 
+        }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lookupProfile</title>
+  </head>
+  <body>
+    <script>
+      var contacts = [{
+          "firstname": "Asma",
+          "lastName": "Khan",
+          "number": "090078601",
+          "likes": ["Pizza","coding","Brownie Points"]},
+          {
+          "firstname": "Sania",
+          "lastName": "Jameel",
+          "number": "03053388283",
+          "likes": ["Hogwarts","Magics","Hagrid"]},
+          {
+          "firstname": "Raheel",
+          "lastName": "Hussain",
+          "number": "03043028177",
+          "likes": ["Intriguing Cases","Violen"]},
+          {
+          "firstname": "Kashif",
+          "lastName": "Kamran",
+          "number": "03332881993",
+          "likes": ["Javascript","Gaming","Foxes"]}
+       ];
+    //I made this program but it so long and i personally hate it.
+      // function lookProfile(name,prop){
+      //   let flag = 0;
+      //     for(let i=0 ;i< contacts.length;i++){
+      //         if(contacts[i]['firstname']==[name]){
+      //             flag = 1;
+      //             if(contacts[i][prop]){
+      //                 return name + " has "+ prop+ " "+ contacts[i][prop];
+      //               }
+      //               else{
+      //                   return "sorry it has no such property!";
+      //               }
+      //           }
+      //       }
+      //       if(flag == 0){
+      //         return "Sorry it has no such record!!!!";
+      //       }
+      //   }
+        //different way of making this program in very decent look it is made by freecodecamp sir.
+        function lookProfile2(name,prop){
+          for(let i=0;i<contacts.length;i++){
+            if(contacts[i]['firstname']==name){
+              return contacts[i][prop] || "No such property is found";
+            }
+          }
+            return "sorry it has no such record!!!";
+          }
+      let name="Sania";
+      let prop = "number";
+
+      // console.log(lookProfile(name,prop));
+      console.log(lookProfile2(name,prop));
+
+    </script>
+  </body>
+</html>

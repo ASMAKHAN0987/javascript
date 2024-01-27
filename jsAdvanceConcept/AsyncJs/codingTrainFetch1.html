@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img src="" alt="" id="blob" width="400" />
+    <script>
+      //   console.log("about to fetch rainbow");
+      //   fetch('images.jpg').then((response)=>{
+      //     console.log(response);
+      //     return response.blob();
+      //   }).then((blob)=>{
+      //     console.log(blob);
+      //     document.getElementById('blob').src=URL.createObjectURL(blob);
+      //   }).catch((error)=>{
+      //     console.log("there is an error: ",error);
+      //   })
+
+      //   ---------------------------------------------
+      //   console.log("ABOUT TO FETCH IMAGE USING ASYNC AND AWAIT");
+      //   async function fetching() {
+      //     try {
+      //       const response = await fetch("images.jpg");
+      //       console.log(response);
+      //       const blob = await response.blob();
+      //       console.log(blob);
+      //       document.getElementById("blob").src = URL.createObjectURL(blob);
+      //     } catch (err) {
+      //       console.log("THERE IS SOME ERROR!!!!!");
+      //     }
+      //   }
+      //   fetching();
+      //   and instead of try and catch we can also do this like
+      // fetching().then((response)=>console.log("doneee")).catch((error)=>console.log("there is some error"))
+
+      // if we want to bring more than one images from unsplash.com
+
+      console.log("we are fetching more than one images there: ");
+      const imagesArray = ['https://images.unsplash.com/photo-1617173296245-13e9fc0b68fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHJhaW5ib3dzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60',
+     'https://images.unsplash.com/photo-1532135468830-e51699205b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8cmFpbmJvd3N8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
+     'https://images.unsplash.com/photo-1502691876148-a84978e59af8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHJhaW5ib3dzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60']
+      async function fetching(images) {
+        try {
+          for (const image of images) {
+            const response = await fetch(image);
+            console.log(response);
+            const blob = await response.blob();
+            console.log(blob);
+            const img = document.createElement('img');
+            img.src = URL.createObjectURL(blob);
+            img.width = '200';
+            img.height='300';
+            document.body.append(img);
+          }
+        } catch (err) {
+          console.log("THERE IS SOME ERROR!!!!!");
+        }
+      }
+      fetching(imagesArray);
+    </script>
+  </body>
+</html>

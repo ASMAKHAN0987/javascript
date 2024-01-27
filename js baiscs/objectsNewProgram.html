@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+      var collection = {
+        "1": {
+            "album": "Slippery when wet",
+            "artist": "Bon Jovi",
+            "tracks": [
+                "Let it Rock",
+                "you Give Love a bad name"
+            ]
+        },
+        "2": {
+            "album": "1999",
+            "artist": "Prince",
+            "tracks": [
+                "1999",
+                "Little Red corvette"
+            ]
+        },
+        "3": {
+            "artist": "Robert Palmer",
+            "tracks": []
+        }, 
+        "4": {
+            "album": "Abba gold"
+        }
+      };
+      var collectionCopy = JSON.parse(JSON.stringify(collection));
+      function update(id,prop,value){
+          if(value=== ""){
+            delete collection[id][prop];
+          }
+          else if(prop === "tracks"){
+            collection[id][prop] = collection[id][prop] || [];
+            collection[id][prop].push(value);
+          }
+          else {
+            collection[id]  = {};
+            collection[id][prop]= value;
+          }
+          return collection;
+      }
+      console.log("updating values of obj: ",update("lone","release","1992"));
+    //   console.log("updating values of obj: ",update(3,"tracks",""));
+    // console.log(collectionCopy);
+   </script>
+</body>
+</html>

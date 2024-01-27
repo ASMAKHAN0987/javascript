@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body id="body">
+    <ul id="element" data="valid">
+      <li class="list-items">Home</li>
+      <li class="list-items">Feedback</li>
+      <li class="list-items">Contact Us</li>
+      <li class="list-items">Share Us</li>
+      <li class="list-items">Tutorials</li>
+    </ul>
+    <div id="firstDiv">first div</div>
+    <table>
+        <td>one</td>
+        <td>two</td>
+      </tr>
+      <tr>
+        <td>Three</td>
+        <td>Four</td>
+      </tr>
+    </table>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat inventore quibusdam, tempora eum cupiditate pariatur voluptatem facere? Quo, dolore quos.</p>
+    <a href="https://www.mozilla.org/">Google</a>
+
+    <!-- /////////////////Script///////////////// -->
+    <script>
+      // console.log(element);
+      // element.style.background = "crimson";
+      // let ultag = document.getElementById("element");
+      // ultag.style.backgroundColor = "wheat";
+      // const ultag1 = document.getElementById("element");
+      // console.log("element");
+      // let i;
+      // for (i = 0; i < 4; i++) {
+      //   ListItem = document.getElementsByClassName("list-items");
+      //   if(i==2){
+      //       ListItem[i].style.background = "red";
+      //   }
+      //   console.log(ListItem[i]);
+      // }
+      // console.log(document.getElementsByTagName("table"));
+      // console.log(document.getElementsByTagName("a"));
+      // console.log(document.getElementsByTagName("a"));
+      // const ListItems = document.querySelectorAll('.list-items');
+      // console.log(ListItems);
+
+      // const ListItem2 = document.querySelectorAll('ul > Li:nth-child(3)');
+      // console.log(ListItem2[0].textContent);
+      // //Attributes
+      // console.log(element.id);
+      // console.log(element.getAttribute('data'));
+      // console.log(element.setAttribute('data','noValid'));
+      // console.log(element.getAttribute('data'));
+      // console.log(element.hasAttribute('data'));
+      // console.log(element.removeAttribute('data'));
+      // console.log(element.hasAttribute('data'));
+      // console.log(element.attributes);
+      //Creating and removing nodes
+      // const newDiv = document.createElement('div');
+      // const newText = document.createTextNode('Assalm U Alikum');
+      // newDiv.appendChild(newText);
+      // body.append(newDiv);
+      // const newText = document.createTextNode('Salam Pakistan');
+      // newDiv.appendChild(newText);
+      // body.prepend(newDiv);
+      // body.before(newDiv);
+      // body.after(newDiv);
+      
+      // firstDiv.remove();
+      // newDiv.textContent = "salam Pakistan";
+      // body.append(newDiv);
+      // firstDiv.replaceWith(newDiv);
+      const newDiv = document.createElement('div');
+            // newDiv.textContent = "salam Pakistan";
+      newDiv.innerHtml = `<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat inventore quibusdam, tempora eum cupiditate pariatur voluptatem facere? Quo, dolore quos.</p>`
+    body.append(newDiv);
+    </script> 
+  </body>
+</html>
